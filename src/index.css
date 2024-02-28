@@ -72,10 +72,6 @@ html {
   transform: scale(0.95);
 }
 
-#sidebar-active {
-  background-color: var(--primary-color);
-}
-
 .sidebar svg {
   font-size: 1.8rem;
 }
@@ -303,4 +299,8 @@ label span {
 
 .education-period {
   min-width: 25%;
+}
+
+#sidebar-active {
+  background-color: var(--secondary-color);
 }
