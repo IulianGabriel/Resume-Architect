@@ -1,3 +1,5 @@
+import Layout from "./Components/Layout"
+
 export default function App() {
-  return <p>Coming Soon...</p>;
+  return <Layout />
 }

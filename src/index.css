@@ -1,13 +1,306 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-  text-align: center;
-  font-size: 64px;
-
+  font-style: normal;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #f3f3f3;
+  --div-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+
+.app-div {
+  border: 5px solid black;
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  min-height: 100vh;
+}
+
+.customize-resume-container {
+  margin-top: 3rem;
+  display: flex;
+  gap: 3rem;
+  background-color: var(--secondary-color);
+}
+
+/* sidebar styling */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 10rem;
+  height: 18rem;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  box-shadow: var(--div-box-shadow);
+}
+
+.sidebar button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 8rem;
+  height: 6rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebar button:active {
+  transform: scale(0.95);
+}
+
+.sidebar svg {
+  font-size: 1.8rem;
+}
+
+/* Form container styling */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50rem;
+}
+
+/* Styling Clear/Load template div */
+.resume-controls {
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  height: 6rem;
+  box-shadow: var(--div-box-shadow);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.resume-controls button {
+  width: 20rem;
+  height: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.resume-controls button:active {
+  transform: scale(0.95);
+}
+
+.clear-resume-btn {
+  color: #c02d2d;
+  border: none;
+  background-color: var(--primary-color);
+}
+
+.load-template-btn {
+  border: none;
+  background-color: var(--secondary-color);
+}
+
+/* Inputs div styling */
+.personal-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  border-radius: 1.5rem;
+  height: 40rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.personal-details h3 {
+  font-size: 2.4rem;
+  padding-left: 1.1rem;
+}
+
+label {
+  margin-left: 1.4rem;
+  font-size: 1.4rem;
+  line-height: 2.6em;
+  font-weight: bold;
+}
+
+label span {
+  color: rgb(150, 150, 150);
+  font-size: 1.1rem;
+  padding-left: 0.4rem;
+}
+
+.personal-details input {
+  align-self: center;
+  border-radius: 0.7rem;
+  outline: none;
+  border: 2px solid transparent;
+  height: 3.5rem;
+  width: 90%;
+  padding-left: 1rem;
+  background-color: #f3f4f6;
+  transition: border 0.3s ease;
+}
+
+.personal-details input:focus {
+  border-color: #3a83f0;
+  box-shadow: 0px 0px 1px;
+}
+
+/* styling initial education div */
+.education {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.4rem 0 2.4rem;
+  align-items: center;
+  height: 6rem;
+  border-radius: 1.1rem;
+  background-color: var(--primary-color);
+  box-shadow: var(--div-box-shadow);
+}
+
+.education span {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--primary-color);
+}
+
+.education svg {
+  font-size: 2rem;
+}
+
+/* styling initial experience div */
+.experience {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.4rem 0 2.4rem;
+  height: 6rem;
+  border-radius: 1.1rem;
+  background-color: var(--primary-color);
+  box-shadow: var(--div-box-shadow);
+}
+
+.experience span {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--primary-color);
+}
+
+.experience svg {
+  font-size: 2rem;
+}
+
+/* styling resume container */
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  width: 80rem;
+  height: 112rem;
+}
+
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #091f41;
+  height: 12rem;
+}
+
+.personal-info h1 {
+  font-size: 3rem;
+  color: var(--secondary-color);
+}
+
+.contact-info {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  margin-top: 1rem;
+}
+
+.more-information {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+}
+
+.education-section {
+  margin: 4rem 4rem 0 4rem;
+}
+
+.education-section h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  background-color: var(--secondary-color);
+  height: 3rem;
+}
+
+.education-section p {
+  font-size: 1.4rem;
+}
+
+.education-info {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.education-info p {
+  font-size: 1.6rem;
+}
+
+.experience-section {
+  margin: 4rem 4rem 0 4rem;
+}
+
+.experience-section h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  background-color: var(--secondary-color);
+  height: 3rem;
+}
+
+.experience-info {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.experience-info p {
+  font-size: 1.6rem;
+}
+
+.working-period {
+  min-width: 25%;
+}
+
+.education-period {
+  min-width: 25%;
+}
+
+#sidebar-active {
+  background-color: var(--secondary-color);
+}
