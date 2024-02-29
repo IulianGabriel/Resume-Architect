@@ -1,12 +1,17 @@
 import { FaTrash } from "react-icons/fa"; // icon for "clear" button
 
-export default function ResumeControls() {
+export default function ResumeControls({
+  handleClearButton,
+  handleTemplateButton,
+}) {
   return (
     <div className="resume-controls">
-      <button className="clear-resume-btn">
+      <button onClick={handleClearButton} className="clear-resume-btn">
         <FaTrash /> Clear Resume
       </button>
-      <button className="load-template-btn">Load Template</button>
+      <button onClick={handleTemplateButton} className="load-template-btn">
+        Load Template
+      </button>
     </div>
   );
 }
