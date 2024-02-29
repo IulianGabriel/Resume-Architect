@@ -1,3 +1,5 @@
+import templateResume from "../util/template";
+
 export default function PersonalDetails({ handleInputChange, inputValue }) {
   return (
     <form className="personal-details">
@@ -5,7 +7,7 @@ export default function PersonalDetails({ handleInputChange, inputValue }) {
       <label>Full name</label>
       <input
         type="text"
-        placeholder="Burciu Iulian Gabriel"
+        placeholder={templateResume.name}
         name="name"
         value={inputValue.name}
         onChange={handleInputChange}
@@ -15,7 +17,7 @@ export default function PersonalDetails({ handleInputChange, inputValue }) {
       </label>
       <input
         type="email"
-        placeholder="Buiuga@gmail.com"
+        placeholder={templateResume.email}
         name="email"
         value={inputValue.email}
         onChange={handleInputChange}
@@ -25,7 +27,7 @@ export default function PersonalDetails({ handleInputChange, inputValue }) {
       </label>
       <input
         type="tel"
-        placeholder="Enter phone number"
+        placeholder={templateResume.phoneNumber}
         name="phoneNumber"
         value={inputValue.phoneNumber}
         onChange={handleInputChange}
@@ -35,7 +37,7 @@ export default function PersonalDetails({ handleInputChange, inputValue }) {
       </label>
       <input
         type="text"
-        placeholder="Bucuresti, Romania"
+        placeholder={templateResume.address}
         name="address"
         value={inputValue.address}
         onChange={handleInputChange}

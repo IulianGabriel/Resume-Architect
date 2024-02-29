@@ -11,11 +11,12 @@ import { useState } from "react";
 
 export default function App() {
   const [inputValue, setInputValue] = useState({
-    name: "",
-    email: "",
-    phoneNumber: "",
-    address: "",
+    name: templateResume.name,
+    email: templateResume.email,
+    phoneNumber: templateResume.phoneNumber,
+    address: templateResume.address,
   });
+
   function handleInputChange(e) {
     const { name, value } = e.target;
     // const name = e.target.name;
