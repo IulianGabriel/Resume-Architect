@@ -164,8 +164,9 @@ label span {
 }
 
 /* styling initial education div */
-.education {
+.qualification {
   display: flex;
+  margin-top: 1rem;
   justify-content: space-between;
   padding: 0 2.4rem 0 2.4rem;
   align-items: center;
@@ -175,35 +176,13 @@ label span {
   box-shadow: var(--div-box-shadow);
 }
 
-.education span {
+.qualification span {
   font-size: 2rem;
   font-weight: bold;
   background-color: var(--primary-color);
 }
 
-.education svg {
-  font-size: 2rem;
-}
-
-/* styling initial experience div */
-.experience {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2.4rem 0 2.4rem;
-  height: 6rem;
-  border-radius: 1.1rem;
-  background-color: var(--primary-color);
-  box-shadow: var(--div-box-shadow);
-}
-
-.experience span {
-  font-size: 2rem;
-  font-weight: bold;
-  background-color: var(--primary-color);
-}
-
-.experience svg {
+.qualification svg {
   font-size: 2rem;
 }
 
