@@ -1,4 +1,4 @@
-import templateResume from "../util/template";
+import { templateResume } from "../util/template";
 
 export default function PersonalDetails({ handleInputChange, inputValue }) {
   return (
