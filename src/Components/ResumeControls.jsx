@@ -1,4 +1,5 @@
 import { FaTrash } from "react-icons/fa"; // icon for "clear" button
+import PropTypes from "prop-types";
 
 export default function ResumeControls({
   handleClearButton,
@@ -15,3 +16,8 @@ export default function ResumeControls({
     </div>
   );
 }
+
+ResumeControls.propTypes = {
+  handleClearButton: PropTypes.func.isRequired,
+  handleTemplateButton: PropTypes.func.isRequired,
+};

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import templateResume from "../util/template";
 
 export default function PersonalDetails({ handleInputChange, inputValue }) {
@@ -24,7 +25,7 @@ export default function PersonalDetails({ handleInputChange, inputValue }) {
         value={inputValue.email}
         onChange={handleInputChange}
       />
-      <label form="phoneNumber">
+      <label htmlFor="phoneNumber">
         Phone Number <span>recommended</span>
       </label>
       <input
@@ -49,3 +50,13 @@ export default function PersonalDetails({ handleInputChange, inputValue }) {
     </form>
   );
 }
+
+PersonalDetails.propTypes = {
+  handleInputChange: PropTypes.func.isRequired,
+  inputValue: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+  }).isRequired,
+};
