@@ -171,6 +171,7 @@ label span {
   padding: 0 2.4rem 0 2.4rem;
   align-items: center;
   height: 6rem;
+  border: none;
   border-radius: 1.1rem;
   background-color: var(--primary-color);
   box-shadow: var(--div-box-shadow);
