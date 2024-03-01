@@ -56,8 +56,16 @@ export default function App() {
             handleInputChange={handleInputChange}
             inputValue={inputValue}
           />
-          <Qualifications text="Education" icon="educationIcon" />
-          <Qualifications text="Experience" icon="experienceIcon" />
+          <Qualifications
+            text="Education"
+            icon="educationIcon"
+            createFormText="&#x2b; Education"
+          />
+          <Qualifications
+            text="Experience"
+            icon="experienceIcon"
+            createFormText="&#x2b; Experience"
+          />
         </div>
       </section>
       <section className="resume-container">

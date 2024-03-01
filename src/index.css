@@ -164,17 +164,25 @@ label span {
 }
 
 /* styling initial education div */
-.qualification {
+
+.qualification-container {
   display: flex;
+  height: auto;
+  flex-direction: column;
+  border-radius: 1.1rem;
   margin-top: 1rem;
   justify-content: space-between;
   padding: 0 2.4rem 0 2.4rem;
-  align-items: center;
-  height: 6rem;
-  border: none;
-  border-radius: 1.1rem;
   background-color: var(--primary-color);
   box-shadow: var(--div-box-shadow);
+}
+
+.qualification {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  background-color: var(--primary-color);
+  height: 6rem;
 }
 
 .qualification span {
@@ -185,6 +193,33 @@ label span {
 
 .qualification svg {
   font-size: 2rem;
+}
+
+.qualification-open-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 6rem;
+  max-height: auto;
+}
+
+.create-form {
+  width: 12rem;
+  height: 4rem;
+  border: 4px solid var(--secondary-color);
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.inactive {
+  display: none;
+}
+
+.create-form:active {
+  transform: scale(0.95);
 }
 
 /* styling resume container */

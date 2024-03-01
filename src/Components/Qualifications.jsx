@@ -10,10 +10,10 @@ import {
   AccordionIcon,
 } from "@chakra-ui/accordion";
 
-export default function Qualifications({ text, icon }) {
+export default function Qualifications({ text, icon, createFormText }) {
   return (
     <Accordion allowToggle>
-      <AccordionItem>
+      <AccordionItem className="qualification-container">
         <AccordionButton className="qualification">
           <div>
             <span>
@@ -22,7 +22,9 @@ export default function Qualifications({ text, icon }) {
           </div>
           <AccordionIcon />
         </AccordionButton>
-        <AccordionPanel>Test</AccordionPanel>
+        <AccordionPanel className="qualification-open-container">
+          <button className="create-form">{createFormText}</button>
+        </AccordionPanel>
       </AccordionItem>
     </Accordion>
   );
@@ -31,4 +33,5 @@ export default function Qualifications({ text, icon }) {
 Qualifications.propTypes = {
   text: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
+  createFormText: PropTypes.string.isRequired,
 };
