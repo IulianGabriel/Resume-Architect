@@ -1,5 +1,5 @@
+import AddQualifications from "./AddQualifications";
 import { MdSchool } from "react-icons/md"; //icon for "Education"
-// import { IoChevronDown } from "react-icons/io5"; // icon for dropdown menu
 import { FaBriefcase } from "react-icons/fa"; // icon for "experience"
 import PropTypes from "prop-types";
 import {
@@ -9,8 +9,13 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/accordion";
+import { useState } from "react";
 
 export default function Qualifications({ text, icon, createFormText }) {
+  const [addQualification, setAddQualification] = useState(false);
+  function handleQualificationButton() {
+    setAddQualification(true);
+  }
   return (
     <Accordion allowToggle>
       <AccordionItem className="qualification-container">
@@ -23,7 +28,13 @@ export default function Qualifications({ text, icon, createFormText }) {
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel className="qualification-open-container">
-          <button className="create-form">{createFormText}</button>
+          <button
+            onClick={handleQualificationButton}
+            className={`create-form ${addQualification ? "inactive" : null}`}
+          >
+            {createFormText}
+          </button>
+          {addQualification && <AddQualifications category={text}/>}
         </AccordionPanel>
       </AccordionItem>
     </Accordion>

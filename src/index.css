@@ -319,3 +319,57 @@ label span {
 #sidebar-active {
   background-color: var(--secondary-color);
 }
+
+.qualificationInputs-container{
+  display: flex; 
+  flex-direction: column; 
+}
+
+.qualificationInputs-container input {
+  align-self: center;
+  border-radius: 0.7rem;
+  outline: none;
+  border: 2px solid transparent;
+  height: 3.5rem;
+  width: 90%;
+  padding-left: 1rem;
+  background-color: #f3f4f6;
+  transition: border 0.3s ease;
+}
+
+.attendance-period{
+  display: flex;
+}
+
+.updateQualification-container-buttons{
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 2rem 1rem 2rem;
+}
+
+.updateQualification-container-buttons button{
+width: 8rem;
+height: 3rem;
+border-radius: 0.5rem;
+background-color: transparent;
+border: 1px solid gray;
+color: gray;
+font-weight: bolder;
+cursor: pointer;;
+}
+
+.update-qualification{
+display: flex;
+gap: 1rem;
+
+}
+.update-qualification .cancel-qualification-action{
+width: 7rem;
+}
+
+.update-qualification .save-qualification{
+width: 5rem;
+background-color: #187ff5;
+color: var(--secondary-color);
+border: none;
+}

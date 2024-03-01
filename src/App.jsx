@@ -64,7 +64,7 @@ export default function App() {
           <Qualifications
             text="Experience"
             icon="experienceIcon"
-            createFormText="&#x2b; Experience"
+            createFormText="&#x271A; Experience"
           />
         </div>
       </section>
