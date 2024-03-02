@@ -18,8 +18,6 @@ const App = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // const name = e.target.name;
-    // const value = e.target.value;
     setInputValue((prev) => {
       return { ...prev, [name]: value };
     });

@@ -4,6 +4,14 @@ import { FaTrash } from "react-icons/fa"; // icon for "clear" button
 const AddQualifications = ({ category }) => {
   const categoryName = category === "Education" ? "School" : "Company Name";
   const categoryInfo = category === "Education" ? "Degree" : "Position Title";
+  const showDescription = category === "Experience" && (
+    <>
+      <label htmlFor="description">
+        Description <span>optional</span>
+      </label>
+      <input type="textarea" id="description" placeholder="Description..." />
+    </>
+  );
   return (
     <form className="qualificationInputs-container">
       <label htmlFor="qualification-name">{categoryName}</label>
@@ -32,6 +40,7 @@ const AddQualifications = ({ category }) => {
         Location <span>optional</span>
       </label>
       <input type="text" id="location" placeholder="Enter Location" />
+      {showDescription}
       <div className="updateQualification-container-buttons">
         <button className="delete-qualification">
           <FaTrash /> Delete
