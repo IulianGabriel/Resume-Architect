@@ -8,7 +8,7 @@ import Qualifications from "./Components/Qualifications";
 import { templateResume } from "./util/template";
 import { useState } from "react";
 
-export default function App() {
+const App = () => {
   const [inputValue, setInputValue] = useState({
     name: templateResume.name,
     email: templateResume.email,
@@ -16,32 +16,32 @@ export default function App() {
     address: templateResume.address,
   });
 
-  function handleInputChange(e) {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     // const name = e.target.name;
     // const value = e.target.value;
     setInputValue((prev) => {
       return { ...prev, [name]: value };
     });
-  }
+  };
 
-  function handleClearButton() {
+  const handleClearButton = () => {
     setInputValue({
       name: "",
       email: "",
       phoneNumber: "",
       address: "",
     });
-  }
+  };
 
-  function handleTemplateButton() {
+  const handleTemplateButton = () => {
     setInputValue({
       name: templateResume.name,
       email: templateResume.email,
       phoneNumber: templateResume.phoneNumber,
       address: templateResume.address,
     });
-  }
+  };
 
   return (
     <div className="app-div">
@@ -56,16 +56,7 @@ export default function App() {
             handleInputChange={handleInputChange}
             inputValue={inputValue}
           />
-          <Qualifications
-            text="Education"
-            icon="educationIcon"
-            createFormText="&#x2b; Education"
-          />
-          <Qualifications
-            text="Experience"
-            icon="experienceIcon"
-            createFormText="&#x271A; Experience"
-          />
+          <Qualifications />
         </div>
       </section>
       <section className="resume-container">
@@ -77,4 +68,6 @@ export default function App() {
       </section>
     </div>
   );
-}
+};
+
+export default App;

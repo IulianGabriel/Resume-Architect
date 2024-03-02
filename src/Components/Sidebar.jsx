@@ -1,7 +1,7 @@
 import { FaRegFileAlt } from "react-icons/fa"; //File icon for "content" button
 import { BiCustomize } from "react-icons/bi"; //icon for "customize" button
 
-export default function Sidebar() {
+const Sidebar = () => {
   return (
     <div className="sidebar">
       <button id="sidebar-active">
@@ -12,4 +12,6 @@ export default function Sidebar() {
       </button>
     </div>
   );
-}
+};
+
+export default Sidebar;

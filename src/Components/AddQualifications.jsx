@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { FaTrash } from "react-icons/fa"; // icon for "clear" button
 
-export default function AddQualifications({ category }) {
+const AddQualifications = ({ category }) => {
   const categoryName = category === "Education" ? "School" : "Company Name";
   const categoryInfo = category === "Education" ? "Degree" : "Position Title";
   return (
@@ -10,13 +10,13 @@ export default function AddQualifications({ category }) {
       <input
         type="text"
         id="qualification-name"
-        placeholder={`Enter ${categoryName}`}
+        placeholder={`Enter ${categoryName} / University`}
       />
       <label htmlFor="qualification-info">{categoryInfo}</label>
       <input
         type="text"
         id="qualification-info"
-        placeholder={`Enter ${categoryInfo}`}
+        placeholder={`Enter ${categoryInfo} / Field of study`}
       />
       <div className="attendance-period">
         <div className="start-attendance">
@@ -43,8 +43,10 @@ export default function AddQualifications({ category }) {
       </div>
     </form>
   );
-}
+};
 
 AddQualifications.propTypes = {
   category: PropTypes.string.isRequired,
 };
+
+export default AddQualifications;

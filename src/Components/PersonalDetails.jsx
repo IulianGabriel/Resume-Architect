@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { templateResume } from "../util/template";
 
-export default function PersonalDetails({ handleInputChange, inputValue }) {
+const PersonalDetails = ({ handleInputChange, inputValue }) => {
   return (
     <form className="personal-details">
       <h3>Personal Details</h3>
@@ -49,7 +49,7 @@ export default function PersonalDetails({ handleInputChange, inputValue }) {
       />
     </form>
   );
-}
+};
 
 PersonalDetails.propTypes = {
   handleInputChange: PropTypes.func.isRequired,
@@ -60,3 +60,5 @@ PersonalDetails.propTypes = {
     address: PropTypes.string.isRequired,
   }).isRequired,
 };
+
+export default PersonalDetails;

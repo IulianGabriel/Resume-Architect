@@ -88,7 +88,7 @@ html {
 .resume-controls {
   border-radius: 1.5rem;
   background-color: var(--primary-color);
-  height: 6rem;
+  height: 5rem;
   box-shadow: var(--div-box-shadow);
   display: flex;
   justify-content: space-evenly;
@@ -113,8 +113,10 @@ html {
 }
 
 .load-template-btn {
+  font-size: 1.4rem;
   border: none;
-  background-color: var(--secondary-color);
+  background-color: transparent;
+  color: #333;
 }
 
 /* Inputs div styling */
@@ -124,17 +126,20 @@ html {
   flex-direction: column;
   background-color: var(--primary-color);
   border-radius: 1.5rem;
-  height: 40rem;
+  height: 36rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.personal-details label {
+  padding-left: 3rem;
 }
 
 .personal-details h3 {
   font-size: 2.4rem;
-  padding-left: 1.1rem;
+  padding-left: 3rem;
 }
 
 label {
-  margin-left: 1.4rem;
   font-size: 1.4rem;
   line-height: 2.6em;
   font-weight: bold;
@@ -148,7 +153,7 @@ label span {
 
 .personal-details input {
   align-self: center;
-  border-radius: 0.7rem;
+  border-radius: 1rem;
   outline: none;
   border: 2px solid transparent;
   height: 3.5rem;
@@ -195,14 +200,6 @@ label span {
   font-size: 2rem;
 }
 
-.qualification-open-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 6rem;
-  max-height: auto;
-}
-
 .create-form {
   width: 12rem;
   height: 4rem;
@@ -212,10 +209,6 @@ label span {
   font-weight: bold;
   font-size: 1.4rem;
   cursor: pointer;
-}
-
-.inactive {
-  display: none;
 }
 
 .create-form:active {
@@ -320,56 +313,93 @@ label span {
   background-color: var(--secondary-color);
 }
 
-.qualificationInputs-container{
-  display: flex; 
-  flex-direction: column; 
+.qualificationInputs-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.qualificationInputs-container label {
+  padding-left: 0.5rem;
 }
 
 .qualificationInputs-container input {
   align-self: center;
-  border-radius: 0.7rem;
+  border-radius: 1rem;
   outline: none;
   border: 2px solid transparent;
   height: 3.5rem;
-  width: 90%;
+  width: 100%;
   padding-left: 1rem;
   background-color: #f3f4f6;
   transition: border 0.3s ease;
 }
 
-.attendance-period{
-  display: flex;
+.qualificationInputs-container input:focus {
+  border-color: #3a83f0;
+  box-shadow: 0px 0px 1px;
 }
 
-.updateQualification-container-buttons{
+.attendance-period {
+  display: flex;
+  gap: 1rem;
+}
+
+.attendance-period input {
+  width: 100%;
+}
+
+.start-attendance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.end-attendance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.updateQualification-container-buttons {
   display: flex;
   justify-content: space-between;
-  margin: 2rem 2rem 1rem 2rem;
+  margin: 2rem 0;
 }
 
-.updateQualification-container-buttons button{
-width: 8rem;
-height: 3rem;
-border-radius: 0.5rem;
-background-color: transparent;
-border: 1px solid gray;
-color: gray;
-font-weight: bolder;
-cursor: pointer;;
+.updateQualification-container-buttons button {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gray;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
-.update-qualification{
-display: flex;
-gap: 1rem;
-
+.update-qualification {
+  display: flex;
+  gap: 1rem;
 }
-.update-qualification .cancel-qualification-action{
-width: 7rem;
+.update-qualification .cancel-qualification-action {
+  width: 7rem;
 }
 
-.update-qualification .save-qualification{
-width: 5rem;
-background-color: #187ff5;
-color: var(--secondary-color);
-border: none;
+.update-qualification .save-qualification {
+  width: 5rem;
+  background-color: #187ff5;
+  color: var(--secondary-color);
+  border: none;
+}
+
+.qualification-container {
+  margin-top: 2rem;
+}
+
+.qualification-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 2rem 0;
 }

@@ -1,4 +1,4 @@
-export default function ResumeEducationInfo() {
+const ResumeEducationInfo = () => {
   return (
     <div className="education-section">
       <h3>Education</h3>
@@ -14,4 +14,6 @@ export default function ResumeEducationInfo() {
       </div>
     </div>
   );
-}
+};
+
+export default ResumeEducationInfo;

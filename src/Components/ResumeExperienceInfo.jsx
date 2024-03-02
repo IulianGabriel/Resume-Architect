@@ -1,4 +1,4 @@
-export default function ResumeExperienceInfo() {
+const ResumeExperienceInfo = () => {
   return (
     <div className="experience-section">
       <h3>Professional Experience</h3>
@@ -18,4 +18,6 @@ export default function ResumeExperienceInfo() {
       </div>
     </div>
   );
-}
+};
+
+export default ResumeExperienceInfo;
