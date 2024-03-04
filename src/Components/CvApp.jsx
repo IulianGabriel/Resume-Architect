@@ -9,39 +9,88 @@ import { templateResume } from "../util/template";
 import { useState } from "react";
 
 const CvApp = () => {
-  const [inputValue, setInputValue] = useState({
-    name: templateResume.name,
-    email: templateResume.email,
-    phoneNumber: templateResume.phoneNumber,
-    address: templateResume.address,
-    education: templateResume.education,
-    experience: templateResume.experience,
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setInputValue((prev) => {
-      return { ...prev, [name]: value };
-    });
-  };
-
-  const handleClearButton = () => {
-    setInputValue({
+  const [values, setValues] = useState({
+    personalDetails: {
       name: "",
       email: "",
       phoneNumber: "",
       address: "",
-      education: [],
-      experience: [],
+    },
+    education: {
+      name: "",
+      achievement: "",
+      startDate: "",
+      endDate: "",
+      location: "",
+    },
+    experience: {
+      name: "",
+      achievement: "",
+      startDate: "",
+      endDate: "",
+      location: "",
+      jobDescription: "",
+    },
+  });
+
+  const handleInputs = (e, section) => {
+    const { name, value } = e.target;
+    console.log(section, name, value);
+    setValues((prev) => ({
+      ...prev,
+      [section]: { ...prev[section], [name]: value },
+    }));
+  };
+
+  const handleClearButton = () => {
+    setValues({
+      personalDetails: {
+        name: "",
+        email: "",
+        phoneNumber: "",
+        address: "",
+      },
+      education: {
+        name: "",
+        achievement: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+      },
+      experience: {
+        name: "",
+        achievement: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+        jobDescription: "",
+      },
     });
   };
 
   const handleTemplateButton = () => {
-    setInputValue({
-      name: templateResume.name,
-      email: templateResume.email,
-      phoneNumber: templateResume.phoneNumber,
-      address: templateResume.address,
+    setValues({
+      personalDetails: {
+        name: templateResume.personalDetails.name,
+        email: templateResume.personalDetails.email,
+        phoneNumber: templateResume.personalDetails.phoneNumber,
+        address: templateResume.personalDetails.address,
+      },
+      education: {
+        name: templateResume.education[0].name,
+        achievement: templateResume.education[0].achievement,
+        startDate: templateResume.education[0].startDate,
+        endDate: templateResume.education[0].endDate,
+        location: templateResume.education[0].location,
+      },
+      experience: {
+        name: templateResume.experience[0].name,
+        achievement: templateResume.experience[0].achievement,
+        startDate: templateResume.experience[0].startDate,
+        endDate: templateResume.experience[0].endDate,
+        location: templateResume.experience[0].location,
+        jobDescription: templateResume.experience[0].jobDescription,
+      },
     });
   };
 
@@ -55,17 +104,22 @@ const CvApp = () => {
             handleTemplateButton={handleTemplateButton}
           />
           <PersonalDetails
-            handleInputChange={handleInputChange}
-            inputValue={inputValue}
+            handlePersonalDetailsInputs={(e) =>
+              handleInputs(e, "personalDetails")
+            }
+            pdInputValues={values.personalDetails}
           />
-          <Qualifications />
+          <Qualifications
+            qualificationInputs={values}
+            setQualificationHandle={setValues}
+          />
         </div>
       </section>
       <section className="resume-container">
-        <ResumePersonalInfo personalInfo={inputValue} />
+        <ResumePersonalInfo personalInfo={values.personalDetails} />
         <div className="more-information">
-          <ResumeEducationInfo />
-          <ResumeExperienceInfo />
+          <ResumeEducationInfo educationInfo={values.education} />
+          <ResumeExperienceInfo experienceInfo={values.experience} />
         </div>
       </section>
     </div>

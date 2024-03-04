@@ -2,34 +2,16 @@ import AccordionItemComp from "./AccordionItemComp";
 import { Accordion } from "@chakra-ui/accordion";
 import { FaBriefcase } from "react-icons/fa"; // icon for "experience"
 import { GiOpenBook } from "react-icons/gi";
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-const Qualifications = () => {
-  const [qualificationInputs, setQualificationInputs] = useState({
-    education: {
-      name: "",
-      achievement: "",
-      startDate: "",
-      endDate: "",
-      location: "",
-    },
-    experience: {
-      name: "",
-      achievement: "",
-      startDate: "",
-      endDate: "",
-      location: "",
-      jobDescription: "",
-    },
-  });
-  function handleQualificationsInputs(e, section) {
+const Qualifications = ({ qualificationInputs, setQualificationHandle }) => {
+  const handleQualificationsInputs = (e, section) => {
     const { name, value } = e.target;
-    setQualificationInputs((prev) => ({
+    setQualificationHandle((prev) => ({
       ...prev,
       [section]: { ...prev[section], [name]: value },
     }));
-  }
-
+  };
   return (
     <Accordion allowToggle>
       <AccordionItemComp
@@ -52,6 +34,14 @@ const Qualifications = () => {
       />
     </Accordion>
   );
+};
+
+Qualifications.propTypes = {
+  qualificationInputs: PropTypes.shape({
+    education: PropTypes.object.isRequired,
+    experience: PropTypes.object.isRequired,
+  }).isRequired,
+  setQualificationHandle: PropTypes.func.isRequired,
 };
 
 export default Qualifications;

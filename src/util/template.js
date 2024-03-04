@@ -1,8 +1,10 @@
 export const templateResume = {
-  name: "Samuel Parris",
-  email: "SamuelParris@gmail.com",
-  phoneNumber: "123-456-7890",
-  address: "London, UK",
+  personalDetails: {
+    name: "Samuel Parris",
+    email: "SamuelParris@gmail.com",
+    phoneNumber: "123-456-7890",
+    address: "London, UK",
+  },
   education: [
     {
       name: "Oxford International College",

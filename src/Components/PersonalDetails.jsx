@@ -1,59 +1,59 @@
 import PropTypes from "prop-types";
 import { templateResume } from "../util/template";
 
-const PersonalDetails = ({ handleInputChange, inputValue }) => {
+const PersonalDetails = ({ handlePersonalDetailsInputs, pdInputValues }) => {
   return (
     <form className="personal-details">
       <h3>Personal Details</h3>
       <label htmlFor="name">Full name</label>
       <input
         type="text"
-        placeholder={templateResume.name}
+        placeholder={templateResume.personalDetails.name}
         id="name"
         name="name"
-        value={inputValue.name}
-        onChange={handleInputChange}
+        value={pdInputValues.name}
+        onChange={handlePersonalDetailsInputs}
       />
       <label htmlFor="email">
         Email <span>recommended</span>
       </label>
       <input
         type="email"
-        placeholder={templateResume.email}
+        placeholder={templateResume.personalDetails.email}
         id="email"
         name="email"
-        value={inputValue.email}
-        onChange={handleInputChange}
+        value={pdInputValues.email}
+        onChange={handlePersonalDetailsInputs}
       />
       <label htmlFor="phoneNumber">
         Phone Number <span>recommended</span>
       </label>
       <input
         type="tel"
-        placeholder={templateResume.phoneNumber}
+        placeholder={templateResume.personalDetails.phoneNumber}
         id="phoneNumber"
         name="phoneNumber"
-        value={inputValue.phoneNumber}
-        onChange={handleInputChange}
+        value={pdInputValues.phoneNumber}
+        onChange={handlePersonalDetailsInputs}
       />
       <label htmlFor="address">
         Address <span>recommended</span>
       </label>
       <input
         type="text"
-        placeholder={templateResume.address}
+        placeholder={templateResume.personalDetails.address}
         id="address"
         name="address"
-        value={inputValue.address}
-        onChange={handleInputChange}
+        value={pdInputValues.address}
+        onChange={handlePersonalDetailsInputs}
       />
     </form>
   );
 };
 
 PersonalDetails.propTypes = {
-  handleInputChange: PropTypes.func.isRequired,
-  inputValue: PropTypes.shape({
+  handlePersonalDetailsInputs: PropTypes.func.isRequired,
+  pdInputValues: PropTypes.shape({
     name: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     phoneNumber: PropTypes.string.isRequired,

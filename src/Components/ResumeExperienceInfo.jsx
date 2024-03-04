@@ -1,27 +1,38 @@
-import { templateResume } from "../util/template";
+import PropTypes from "prop-types";
 
-const ResumeExperienceInfo = () => {
+const ResumeExperienceInfo = ({ experienceInfo }) => {
+  const { name, achievement, startDate, endDate, location, jobDescription } =
+    experienceInfo;
+
   return (
     <div className="experience-section">
       <h3>Professional Experience</h3>
       <div className="experience-info">
         <div className="working-period">
           <p>
-            {templateResume.experience[0].startDate} -{" "}
-            {templateResume.experience[0].endDate}
+            {startDate} -{endDate}
           </p>
-          <p> {templateResume.experience[0].location} </p>
+          <p> {location} </p>
         </div>
         <div className="additional-information">
-          <p>{templateResume.experience[0].name}</p>
-          <p style={{ fontWeight: "bold" }}>
-            {templateResume.experience[0].achievement}
-          </p>
-          <p>{templateResume.experience[0].jobDescription}</p>
+          <p>{name}</p>
+          <p style={{ fontWeight: "bold" }}>{achievement}</p>
+          <p>{jobDescription}</p>
         </div>
       </div>
     </div>
   );
+};
+
+ResumeExperienceInfo.propTypes = {
+  experienceInfo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    achievement: PropTypes.string.isRequired,
+    startDate: PropTypes.string.isRequired,
+    endDate: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    jobDescription: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ResumeExperienceInfo;
