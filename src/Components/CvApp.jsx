@@ -14,8 +14,8 @@ const CvApp = () => {
     email: templateResume.email,
     phoneNumber: templateResume.phoneNumber,
     address: templateResume.address,
-    education: [],
-    experience: [],
+    education: templateResume.education,
+    experience: templateResume.experience,
   });
 
   const handleInputChange = (e) => {
@@ -31,6 +31,8 @@ const CvApp = () => {
       email: "",
       phoneNumber: "",
       address: "",
+      education: [],
+      experience: [],
     });
   };
 
