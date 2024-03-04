@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import { FaTrash } from "react-icons/fa"; // icon for "clear" button
 
-const AddQualifications = ({ category }) => {
-  const categoryName = category === "Education" ? "School" : "Company Name";
-  const categoryInfo = category === "Education" ? "Degree" : "Position Title";
-  const showDescription = category === "Experience" && (
+const AddQualifications = ({ config }) => {
+  const categoryName = config.text === "Education" ? "School" : "Company Name";
+  const categoryInfo =
+    config.text === "Education" ? "Degree" : "Position Title";
+  const showDescription = config.text === "Experience" && (
     <>
       <label htmlFor="description">
         Description <span>optional</span>
@@ -55,7 +56,9 @@ const AddQualifications = ({ category }) => {
 };
 
 AddQualifications.propTypes = {
-  category: PropTypes.string.isRequired,
+  config: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+  }),
 };
 
 export default AddQualifications;

@@ -3,5 +3,7 @@ export const templateResume = {
     email: "SamuelParris@gmail.com",
     phoneNumber:"123-456-7890",
     address:"London, UK",
+    education: [],
+    experience: [],
 }
 

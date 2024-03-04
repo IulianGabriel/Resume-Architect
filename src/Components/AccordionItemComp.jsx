@@ -1,7 +1,4 @@
 import AddQualifications from "./AddQualifications";
-import { MdSchool } from "react-icons/md"; //icon for "Education"
-import { FaBriefcase } from "react-icons/fa"; // icon for "experience"
-import PropTypes from "prop-types";
 import { useState } from "react";
 import {
   AccordionItem,
@@ -9,14 +6,16 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/accordion";
+import PropTypes from "prop-types";
 
-const AccordionItemComp = ({ text }) => {
+const AccordionItemComp = ({ config }) => {
   const [addQualifications, setAddQualifications] = useState(false);
   return (
     <AccordionItem className="qualification-container">
       <AccordionButton className="qualification">
         <span>
-          {text === "Education" ? <MdSchool /> : <FaBriefcase />} {text}
+          {config.icon}
+          {config.text}
         </span>
         <AccordionIcon />
       </AccordionButton>
@@ -27,18 +26,21 @@ const AccordionItemComp = ({ text }) => {
               onClick={() => setAddQualifications(true)}
               className="create-form"
             >
-              &#x2b; {text}
+              &#x2b; {config.text}
             </button>
           </div>
         ) : null}
-        {addQualifications && <AddQualifications category={text} />}
+        {addQualifications && <AddQualifications config={config} />}
       </AccordionPanel>
     </AccordionItem>
   );
 };
 
 AccordionItemComp.propTypes = {
-  text: PropTypes.string.isRequired,
+  config: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    icon: PropTypes.element.isRequired,
+  }).isRequired,
 };
 
 export default AccordionItemComp;

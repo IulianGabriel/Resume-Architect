@@ -191,6 +191,8 @@ label span {
 }
 
 .qualification span {
+  display: flex;
+  gap: 1rem;
   font-size: 2rem;
   font-weight: bold;
   background-color: var(--primary-color);
