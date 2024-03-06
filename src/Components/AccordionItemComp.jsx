@@ -10,6 +10,10 @@ import PropTypes from "prop-types";
 
 const AccordionItemComp = ({ config }) => {
   const [addQualifications, setAddQualifications] = useState(false);
+  const handleAddQualificationButton = () => {
+    setAddQualifications(true);
+  };
+
   return (
     <AccordionItem className="qualification-container">
       <AccordionButton className="qualification">
@@ -23,7 +27,7 @@ const AccordionItemComp = ({ config }) => {
         {!addQualifications ? (
           <div className="qualification-button-container">
             <button
-              onClick={() => setAddQualifications(true)}
+              onClick={handleAddQualificationButton}
               className="create-form"
             >
               &#x2b; {config.text}
