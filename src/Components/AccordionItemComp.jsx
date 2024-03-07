@@ -10,14 +10,14 @@ import PropTypes from "prop-types";
 
 const AccordionItemComp = ({ config }) => {
   const [addQualifications, setAddQualifications] = useState(false);
-  const [controlButtons, setControlButtons] = useState(false);
+  const [saveButton, setSaveButton] = useState(false);
   const handleAddQualificationButton = () => {
     setAddQualifications(true);
-    setControlButtons(false);
+    setSaveButton(false);
   };
   const handleSaveBtn = (e) => {
     e.preventDefault();
-    setControlButtons(true);
+    setSaveButton(true);
     setAddQualifications(false);
     const arrayToUpdate =
       config.text === "Education" ? "education" : "experience";
@@ -29,7 +29,7 @@ const AccordionItemComp = ({ config }) => {
       ],
     }));
   };
-  console.log(controlButtons, config.storeQualifications)
+  console.log(saveButton);
   return (
     <AccordionItem className="qualification-container">
       <AccordionButton className="qualification">
@@ -63,7 +63,7 @@ AccordionItemComp.propTypes = {
     text: PropTypes.string.isRequired,
     icon: PropTypes.element.isRequired,
     setStoreQualifications: PropTypes.func.isRequired,
-    qualificationInputs: PropTypes.array.isRequired,
+    qualificationInputs: PropTypes.object.isRequired,
     storeQualifications: PropTypes.shape({
       education: PropTypes.array.isRequired,
       experience: PropTypes.array.isRequired,

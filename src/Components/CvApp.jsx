@@ -70,6 +70,10 @@ const CvApp = () => {
         jobDescription: "",
       },
     });
+    setStoreQualifications({
+      education: [],
+      experience: [],
+    });
   };
 
   const handleTemplateButton = () => {
@@ -124,8 +128,14 @@ const CvApp = () => {
       <section className="resume-container">
         <ResumePersonalInfo personalInfo={values.personalDetails} />
         <div className="more-information">
-          <ResumeEducationInfo educationInfo={values.education} />
-          <ResumeExperienceInfo experienceInfo={values.experience} />
+          <ResumeEducationInfo
+            educationInfo={values.education}
+            showStoredEducation={storeQualifications.education}
+          />
+          <ResumeExperienceInfo
+            experienceInfo={values.experience}
+            showStoredExperience={storeQualifications.experience}
+          />
         </div>
       </section>
     </div>
