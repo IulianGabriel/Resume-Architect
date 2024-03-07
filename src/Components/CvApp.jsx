@@ -9,6 +9,10 @@ import { templateResume } from "../util/template";
 import { useState } from "react";
 
 const CvApp = () => {
+  const [storeQualifications, setStoreQualifications] = useState({
+    education: [],
+    experience: [],
+  });
   const [values, setValues] = useState({
     personalDetails: {
       name: "",
@@ -110,6 +114,8 @@ const CvApp = () => {
             pdInputValues={values.personalDetails}
           />
           <Qualifications
+            storeQualifications={storeQualifications}
+            setStoreQualifications={setStoreQualifications}
             qualificationInputs={values}
             setQualificationHandle={setValues}
           />

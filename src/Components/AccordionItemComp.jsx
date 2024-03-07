@@ -10,10 +10,26 @@ import PropTypes from "prop-types";
 
 const AccordionItemComp = ({ config }) => {
   const [addQualifications, setAddQualifications] = useState(false);
+  const [controlButtons, setControlButtons] = useState(false);
   const handleAddQualificationButton = () => {
     setAddQualifications(true);
+    setControlButtons(false);
   };
-
+  const handleSaveBtn = (e) => {
+    e.preventDefault();
+    setControlButtons(true);
+    setAddQualifications(false);
+    const arrayToUpdate =
+      config.text === "Education" ? "education" : "experience";
+    config.setStoreQualifications((prevState) => ({
+      ...prevState,
+      [arrayToUpdate]: [
+        ...prevState[arrayToUpdate],
+        config.qualificationInputs,
+      ],
+    }));
+  };
+  console.log(controlButtons, config.storeQualifications)
   return (
     <AccordionItem className="qualification-container">
       <AccordionButton className="qualification">
@@ -34,7 +50,9 @@ const AccordionItemComp = ({ config }) => {
             </button>
           </div>
         ) : null}
-        {addQualifications && <AddQualifications config={config} />}
+        {addQualifications && (
+          <AddQualifications config={config} handleSaveBtn={handleSaveBtn} />
+        )}
       </AccordionPanel>
     </AccordionItem>
   );
@@ -44,6 +62,12 @@ AccordionItemComp.propTypes = {
   config: PropTypes.shape({
     text: PropTypes.string.isRequired,
     icon: PropTypes.element.isRequired,
+    setStoreQualifications: PropTypes.func.isRequired,
+    qualificationInputs: PropTypes.array.isRequired,
+    storeQualifications: PropTypes.shape({
+      education: PropTypes.array.isRequired,
+      experience: PropTypes.array.isRequired,
+    }).isRequired,
   }).isRequired,
 };
 

@@ -4,7 +4,12 @@ import { FaBriefcase } from "react-icons/fa"; // icon for "experience"
 import { GiOpenBook } from "react-icons/gi";
 import PropTypes from "prop-types";
 
-const Qualifications = ({ qualificationInputs, setQualificationHandle }) => {
+const Qualifications = ({
+  qualificationInputs,
+  setQualificationHandle,
+  storeQualifications,
+  setStoreQualifications,
+}) => {
   const handleQualificationsInputs = (e, section) => {
     const { name, value } = e.target;
     setQualificationHandle((prev) => ({
@@ -21,6 +26,8 @@ const Qualifications = ({ qualificationInputs, setQualificationHandle }) => {
           qualificationInputs: qualificationInputs.education,
           handleQualificationsInputs: (e) =>
             handleQualificationsInputs(e, "education"),
+          storeQualifications: storeQualifications,
+          setStoreQualifications: setStoreQualifications,
         }}
       />
       <AccordionItemComp
@@ -30,6 +37,8 @@ const Qualifications = ({ qualificationInputs, setQualificationHandle }) => {
           qualificationInputs: qualificationInputs.experience,
           handleQualificationsInputs: (e) =>
             handleQualificationsInputs(e, "experience"),
+          storeQualifications: storeQualifications,
+          setStoreQualifications: setStoreQualifications,
         }}
       />
     </Accordion>
@@ -42,6 +51,11 @@ Qualifications.propTypes = {
     experience: PropTypes.object.isRequired,
   }).isRequired,
   setQualificationHandle: PropTypes.func.isRequired,
+  storeQualifications: PropTypes.shape({
+    education: PropTypes.array.isRequired,
+    experience: PropTypes.array.isRequired,
+  }).isRequired,
+  setStoreQualifications: PropTypes.func.isRequired,
 };
 
 export default Qualifications;
