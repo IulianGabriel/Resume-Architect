@@ -22,21 +22,24 @@ const ResumeEducationInfo = ({ educationInfo, showStoredEducation }) => {
       </div>
     );
   } else {
-    displayEducation = showStoredEducation.map((education, index) => (
-      <div className="education-info" key={index}>
-        <div className="education-period">
-          <p>
-            {education.startDate}
-            {education.endDate}
-          </p>
-          <p>{education.location}</p>
+    displayEducation = showStoredEducation.map((education) => {
+      const newId = window.crypto.randomUUID();
+      return (
+        <div className="education-info" key={newId}>
+          <div className="education-period">
+            <p>
+              {education.startDate}
+              {education.endDate}
+            </p>
+            <p>{education.location}</p>
+          </div>
+          <div className="school-and-degree">
+            <p style={{ fontWeight: "bold" }}>{education.name}</p>
+            <p>{education.achievement}</p>
+          </div>
         </div>
-        <div className="school-and-degree">
-          <p style={{ fontWeight: "bold" }}>{education.name}</p>
-          <p>{education.achievement}</p>
-        </div>
-      </div>
-    ));
+      );
+    });
   }
 
   return (

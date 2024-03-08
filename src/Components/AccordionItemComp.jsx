@@ -41,26 +41,30 @@ const AccordionItemComp = ({ config }) => {
 
   let qualificationEntries;
 
-  if (controlButtons && config.text === "Education") {
-    qualificationEntries = storeQualifications.education.map(
-      (education, index) => {
-        return (
-          <p className="qualificationEntry" key={index}>
-            {education.name}
-          </p>
-        );
-      }
-    );
-  } else if (controlButtons && config.text === "Experience") {
-    qualificationEntries = storeQualifications.experience.map(
-      (experience, index) => {
-        return (
-          <p className="qualificationEntry" key={index}>
-            {experience.name}
-          </p>
-        );
-      }
-    );
+  if (
+    (controlButtons && config.text === "Education") ||
+    (!addQualifications && config.text === "Education")
+  ) {
+    qualificationEntries = storeQualifications.education.map((education) => {
+      const newId = window.crypto.randomUUID();
+      return (
+        <p className="qualificationEntry" key={newId}>
+          {education.name}
+        </p>
+      );
+    });
+  } else if (
+    (controlButtons && config.text === "Experience") ||
+    (!addQualifications && config.text === "Experience")
+  ) {
+    qualificationEntries = storeQualifications.experience.map((experience) => {
+      const newId = window.crypto.randomUUID();
+      return (
+        <p className="qualificationEntry" key={newId}>
+          {experience.name}
+        </p>
+      );
+    });
   }
 
   return (

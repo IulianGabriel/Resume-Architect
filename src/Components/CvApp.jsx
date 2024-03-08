@@ -100,6 +100,27 @@ const CvApp = () => {
         jobDescription: templateResume.experience[0].jobDescription,
       },
     });
+    setStoreQualifications({
+      education: [
+        {
+          name: templateResume.education[0].name,
+          achievement: templateResume.education[0].achievement,
+          startDate: templateResume.education[0].startDate,
+          endDate: templateResume.education[0].endDate,
+          location: templateResume.education[0].location,
+        },
+      ],
+      experience: [
+        {
+          name: templateResume.experience[0].name,
+          achievement: templateResume.experience[0].achievement,
+          startDate: templateResume.experience[0].startDate,
+          endDate: templateResume.experience[0].endDate,
+          location: templateResume.experience[0].location,
+          jobDescription: templateResume.experience[0].jobDescription,
+        },
+      ],
+    });
   };
 
   return (
