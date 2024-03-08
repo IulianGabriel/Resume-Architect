@@ -26,6 +26,7 @@ const Qualifications = ({
           qualificationInputs: qualificationInputs.education,
           handleQualificationsInputs: (e) =>
             handleQualificationsInputs(e, "education"),
+          setQualificationInputs: setQualificationHandle,
           storeQualifications: storeQualifications,
           setStoreQualifications: setStoreQualifications,
         }}
@@ -37,6 +38,7 @@ const Qualifications = ({
           qualificationInputs: qualificationInputs.experience,
           handleQualificationsInputs: (e) =>
             handleQualificationsInputs(e, "experience"),
+          setQualificationInputs: setQualificationHandle,
           storeQualifications: storeQualifications,
           setStoreQualifications: setStoreQualifications,
         }}

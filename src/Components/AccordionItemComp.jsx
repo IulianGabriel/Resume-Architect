@@ -9,14 +9,20 @@ import {
 import PropTypes from "prop-types";
 
 const AccordionItemComp = ({ config }) => {
-  const { storeQualifications, setStoreQualifications } = config;
+  const {
+    storeQualifications,
+    setStoreQualifications,
+    setQualificationInputs,
+    text,
+    icon,
+    qualificationInputs,
+  } = config;
 
   const [addQualifications, setAddQualifications] = useState(false);
   const [controlButtons, setControlButtons] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editedIndex, setEditedIndex] = useState(null);
-  const arrayToUpdate =
-    config.text === "Education" ? "education" : "experience";
+  const arrayToUpdate = text === "Education" ? "education" : "experience";
 
   const handleAddQualificationButton = () => {
     setStoreQualifications((prevState) => ({
@@ -25,6 +31,24 @@ const AccordionItemComp = ({ config }) => {
     }));
     setAddQualifications(true);
     setControlButtons(false);
+    setQualificationInputs((prevQualifications) => ({
+      ...prevQualifications,
+      education: {
+        name: "",
+        achievement: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+      },
+      experience: {
+        name: "",
+        achievement: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+        jobDescription: "",
+      },
+    }));
   };
 
   const handleSaveBtn = (e) => {
@@ -34,9 +58,9 @@ const AccordionItemComp = ({ config }) => {
     const updatedQualifications = [...storeQualifications[arrayToUpdate]];
 
     if (isEditing && editedIndex !== null) {
-      updatedQualifications[editedIndex] = config.qualificationInputs;
+      updatedQualifications[editedIndex] = qualificationInputs;
     } else {
-      updatedQualifications.push(config.qualificationInputs);
+      updatedQualifications.push(qualificationInputs);
     }
 
     setStoreQualifications((prevState) => ({
@@ -64,6 +88,11 @@ const AccordionItemComp = ({ config }) => {
       ...prevState,
       qualificationInputs: storeQualifications[arrayToUpdate][index],
     }));
+    const showEditInputs = storeQualifications[arrayToUpdate][index];
+    setQualificationInputs((prevQualifications) => ({
+      ...prevQualifications,
+      [arrayToUpdate]: showEditInputs,
+    }));
     setEditedIndex(index);
   };
 
@@ -90,8 +119,8 @@ const AccordionItemComp = ({ config }) => {
     <AccordionItem className="qualification-container">
       <AccordionButton className="qualification">
         <span>
-          {config.icon}
-          {config.text}
+          {icon}
+          {text}
         </span>
         <AccordionIcon />
       </AccordionButton>
@@ -103,7 +132,7 @@ const AccordionItemComp = ({ config }) => {
               onClick={handleAddQualificationButton}
               className="create-form"
             >
-              &#x2b; {config.text}
+              &#x2b; {text}
             </button>
           </div>
         ) : null}
@@ -124,6 +153,7 @@ AccordionItemComp.propTypes = {
     text: PropTypes.string.isRequired,
     icon: PropTypes.element.isRequired,
     setStoreQualifications: PropTypes.func.isRequired,
+    setQualificationInputs: PropTypes.func.isRequired,
     qualificationInputs: PropTypes.object.isRequired,
     storeQualifications: PropTypes.shape({
       education: PropTypes.array.isRequired,
