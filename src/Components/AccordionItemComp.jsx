@@ -9,15 +9,18 @@ import {
 import PropTypes from "prop-types";
 
 const AccordionItemComp = ({ config }) => {
+  const { storeQualifications } = config;
   const [addQualifications, setAddQualifications] = useState(false);
-  const [saveButton, setSaveButton] = useState(false);
+  const [controlButtons, setControlButtons] = useState(false);
+
   const handleAddQualificationButton = () => {
     setAddQualifications(true);
-    setSaveButton(false);
+    setControlButtons(false);
   };
+
   const handleSaveBtn = (e) => {
     e.preventDefault();
-    setSaveButton(true);
+    setControlButtons(true);
     setAddQualifications(false);
     const arrayToUpdate =
       config.text === "Education" ? "education" : "experience";
@@ -29,7 +32,37 @@ const AccordionItemComp = ({ config }) => {
       ],
     }));
   };
-  console.log(saveButton);
+
+  const handleCancelButton = (e) => {
+    e.preventDefault();
+    setControlButtons(true);
+    setAddQualifications(false);
+  };
+
+  let qualificationEntries;
+
+  if (controlButtons && config.text === "Education") {
+    qualificationEntries = storeQualifications.education.map(
+      (education, index) => {
+        return (
+          <p className="qualificationEntry" key={index}>
+            {education.name}
+          </p>
+        );
+      }
+    );
+  } else if (controlButtons && config.text === "Experience") {
+    qualificationEntries = storeQualifications.experience.map(
+      (experience, index) => {
+        return (
+          <p className="qualificationEntry" key={index}>
+            {experience.name}
+          </p>
+        );
+      }
+    );
+  }
+
   return (
     <AccordionItem className="qualification-container">
       <AccordionButton className="qualification">
@@ -40,6 +73,7 @@ const AccordionItemComp = ({ config }) => {
         <AccordionIcon />
       </AccordionButton>
       <AccordionPanel>
+        {qualificationEntries}
         {!addQualifications ? (
           <div className="qualification-button-container">
             <button
@@ -51,7 +85,11 @@ const AccordionItemComp = ({ config }) => {
           </div>
         ) : null}
         {addQualifications && (
-          <AddQualifications config={config} handleSaveBtn={handleSaveBtn} />
+          <AddQualifications
+            config={config}
+            handleSaveBtn={handleSaveBtn}
+            handleCancelButton={handleCancelButton}
+          />
         )}
       </AccordionPanel>
     </AccordionItem>

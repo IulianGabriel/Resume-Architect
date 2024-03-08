@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { FaTrash } from "react-icons/fa"; // icon for "clear" button
 
-const AddQualifications = ({ config, handleSaveBtn }) => {
+const AddQualifications = ({ config, handleSaveBtn, handleCancelButton }) => {
   const { qualificationInputs, handleQualificationsInputs } = config;
   const categoryName = config.text === "Education" ? "School" : "Company Name";
   const categoryInfo =
@@ -82,7 +82,12 @@ const AddQualifications = ({ config, handleSaveBtn }) => {
           <FaTrash /> Delete
         </button>
         <div className="update-qualification">
-          <button className="cancel-qualification-action">Cancel</button>
+          <button
+            className="cancel-qualification-action"
+            onClick={handleCancelButton}
+          >
+            Cancel
+          </button>
           <button className="save-qualification" onClick={handleSaveBtn}>
             Save
           </button>
@@ -106,6 +111,7 @@ AddQualifications.propTypes = {
     handleQualificationsInputs: PropTypes.func.isRequired,
   }).isRequired,
   handleSaveBtn: PropTypes.func.isRequired,
+  handleCancelButton: PropTypes.func.isRequired,
 };
 
 export default AddQualifications;

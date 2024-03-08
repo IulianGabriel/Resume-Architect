@@ -409,3 +409,16 @@ label span {
 #description {
   height: 6rem;
 }
+
+.qualificationEntry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--secondary-color);
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  height: 6rem;
+  cursor: pointer;
+  margin: 0.2rem 0;
+}
