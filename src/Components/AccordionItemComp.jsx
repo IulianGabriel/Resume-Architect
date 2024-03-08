@@ -9,11 +9,20 @@ import {
 import PropTypes from "prop-types";
 
 const AccordionItemComp = ({ config }) => {
-  const { storeQualifications } = config;
+  const { storeQualifications, setStoreQualifications } = config;
+
   const [addQualifications, setAddQualifications] = useState(false);
   const [controlButtons, setControlButtons] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedIndex, setEditedIndex] = useState(null);
+  const arrayToUpdate =
+    config.text === "Education" ? "education" : "experience";
 
   const handleAddQualificationButton = () => {
+    setStoreQualifications((prevState) => ({
+      ...prevState,
+      qualificationInputs: {},
+    }));
     setAddQualifications(true);
     setControlButtons(false);
   };
@@ -22,49 +31,59 @@ const AccordionItemComp = ({ config }) => {
     e.preventDefault();
     setControlButtons(true);
     setAddQualifications(false);
-    const arrayToUpdate =
-      config.text === "Education" ? "education" : "experience";
-    config.setStoreQualifications((prevState) => ({
+    const updatedQualifications = [...storeQualifications[arrayToUpdate]];
+
+    if (isEditing && editedIndex !== null) {
+      updatedQualifications[editedIndex] = config.qualificationInputs;
+    } else {
+      updatedQualifications.push(config.qualificationInputs);
+    }
+
+    setStoreQualifications((prevState) => ({
       ...prevState,
-      [arrayToUpdate]: [
-        ...prevState[arrayToUpdate],
-        config.qualificationInputs,
-      ],
+      [arrayToUpdate]: updatedQualifications,
     }));
+
+    setIsEditing(false);
+    setEditedIndex(null);
   };
 
   const handleCancelButton = (e) => {
     e.preventDefault();
     setControlButtons(true);
     setAddQualifications(false);
+    setIsEditing(false);
+    setEditedIndex(null);
   };
 
-  let qualificationEntries;
+  const handleEditButton = (index) => {
+    setIsEditing(true);
+    setAddQualifications(true);
+    setControlButtons(false);
+    setStoreQualifications((prevState) => ({
+      ...prevState,
+      qualificationInputs: storeQualifications[arrayToUpdate][index],
+    }));
+    setEditedIndex(index);
+  };
 
-  if (
-    (controlButtons && config.text === "Education") ||
-    (!addQualifications && config.text === "Education")
-  ) {
-    qualificationEntries = storeQualifications.education.map((education) => {
-      const newId = window.crypto.randomUUID();
-      return (
-        <p className="qualificationEntry" key={newId}>
-          {education.name}
-        </p>
-      );
-    });
-  } else if (
-    (controlButtons && config.text === "Experience") ||
-    (!addQualifications && config.text === "Experience")
-  ) {
-    qualificationEntries = storeQualifications.experience.map((experience) => {
-      const newId = window.crypto.randomUUID();
-      return (
-        <p className="qualificationEntry" key={newId}>
-          {experience.name}
-        </p>
-      );
-    });
+  let qualificationEntries = null;
+
+  if (!addQualifications) {
+    qualificationEntries = storeQualifications[arrayToUpdate].map(
+      (qualification, index) => {
+        const newId = window.crypto.randomUUID();
+        return (
+          <p
+            className="qualificationEntry"
+            key={newId}
+            onClick={() => handleEditButton(index)}
+          >
+            {qualification.name}
+          </p>
+        );
+      }
+    );
   }
 
   return (

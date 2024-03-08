@@ -23,7 +23,6 @@ html {
 }
 
 .app-div {
-  border: 5px solid black;
   background-color: #f3f3f3;
   display: flex;
   justify-content: center;
