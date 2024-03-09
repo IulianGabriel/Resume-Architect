@@ -29,7 +29,7 @@ const ResumeExperienceInfo = ({ experienceInfo, showStoredExperience }) => {
         <div className="experience-info" key={newId}>
           <div className="working-period">
             <p>
-              {experience.startDate} - {experience.endDate}
+              {experience.startDate } - { experience.endDate}
             </p>
             <p>{experience.location}</p>
           </div>

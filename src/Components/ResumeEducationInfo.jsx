@@ -28,8 +28,7 @@ const ResumeEducationInfo = ({ educationInfo, showStoredEducation }) => {
         <div className="education-info" key={newId}>
           <div className="education-period">
             <p>
-              {education.startDate}
-              {education.endDate}
+              {education.startDate} - {education.endDate}
             </p>
             <p>{education.location}</p>
           </div>

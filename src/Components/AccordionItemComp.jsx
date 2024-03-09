@@ -23,6 +23,7 @@ const AccordionItemComp = ({ config }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedIndex, setEditedIndex] = useState(null);
   const arrayToUpdate = text === "Education" ? "education" : "experience";
+  const updatedQualifications = [...storeQualifications[arrayToUpdate]];
 
   const handleAddQualificationButton = () => {
     setStoreQualifications((prevState) => ({
@@ -55,7 +56,6 @@ const AccordionItemComp = ({ config }) => {
     e.preventDefault();
     setControlButtons(true);
     setAddQualifications(false);
-    const updatedQualifications = [...storeQualifications[arrayToUpdate]];
 
     if (isEditing && editedIndex !== null) {
       updatedQualifications[editedIndex] = qualificationInputs;
@@ -94,6 +94,21 @@ const AccordionItemComp = ({ config }) => {
       [arrayToUpdate]: showEditInputs,
     }));
     setEditedIndex(index);
+  };
+
+  const handleDeleteButton = (e) => {
+    e.preventDefault();
+    setControlButtons(true);
+    setAddQualifications(false);
+
+    isEditing &&
+      editedIndex !== null &&
+      updatedQualifications.splice(editedIndex, 1);
+
+    setStoreQualifications((prevState) => ({
+      ...prevState,
+      [arrayToUpdate]: updatedQualifications,
+    }));
   };
 
   let qualificationEntries = null;
@@ -141,6 +156,7 @@ const AccordionItemComp = ({ config }) => {
             config={config}
             handleSaveBtn={handleSaveBtn}
             handleCancelButton={handleCancelButton}
+            handleDeleteButton={handleDeleteButton}
           />
         )}
       </AccordionPanel>
