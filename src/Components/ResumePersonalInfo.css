@@ -1,0 +1,30 @@
+/* styling resume container */
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  width: 80rem;
+  height: 112rem;
+}
+
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #091f41;
+  height: 12rem;
+}
+
+.personal-info h1 {
+  font-size: 3rem;
+  color: var(--secondary-color);
+}
+
+.contact-info {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  margin-top: 1rem;
+}

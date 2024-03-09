@@ -1,0 +1,37 @@
+.education-section {
+  margin: 4rem 4rem 0 4rem;
+}
+
+.education-section h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  background-color: var(--secondary-color);
+  height: 3rem;
+}
+
+.education-section p {
+  font-size: 1.4rem;
+}
+
+.education-info {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.education-info p {
+  font-size: 1.6rem;
+}
+
+.school-and-degree p {
+  padding-top: 0.4rem;
+}
+
+.education-period {
+  min-width: 25%;
+}
+
+.education-period p {
+  padding-top: 0.4rem;
+}

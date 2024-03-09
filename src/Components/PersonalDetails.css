@@ -1,0 +1,35 @@
+.personal-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  border-radius: 1.5rem;
+  height: 36rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.personal-details label {
+  padding-left: 3rem;
+}
+
+.personal-details h3 {
+  font-size: 2.4rem;
+  padding-left: 3rem;
+}
+
+.personal-details input {
+  align-self: center;
+  border-radius: 1rem;
+  outline: none;
+  border: 2px solid transparent;
+  height: 3.5rem;
+  width: 90%;
+  padding-left: 1rem;
+  background-color: #f3f4f6;
+  transition: border 0.3s ease;
+}
+
+.personal-details input:focus {
+  border-color: #3a83f0;
+  box-shadow: 0px 0px 1px;
+}

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./ResumeEducationInfo.css";
 
 const ResumeEducationInfo = ({ showStoredEducation }) => {
   let displayEducation;

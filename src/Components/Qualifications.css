@@ -1,0 +1,57 @@
+.qualification {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  background-color: var(--primary-color);
+  height: 6rem;
+}
+
+.qualification span {
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--primary-color);
+}
+
+.qualification svg {
+  font-size: 2rem;
+}
+
+.create-form {
+  width: 12rem;
+  height: 4rem;
+  border: 4px solid var(--secondary-color);
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.create-form:active {
+  transform: scale(0.95);
+}
+
+.qualificationEntry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--secondary-color);
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  height: 6rem;
+  cursor: pointer;
+  margin: 0.2rem 0;
+}
+
+.qualification-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 2rem 0;
+}
+
+.qualification-container {
+  margin-top: 2rem;
+}

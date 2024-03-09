@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { MdMail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import "./ResumePersonalInfo.css";
 
 const ResumePersonalInfo = ({ personalInfo }) => {
   return (

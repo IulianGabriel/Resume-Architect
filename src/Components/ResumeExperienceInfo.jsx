@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./ResumeExperienceInfo.css";
 
 const ResumeExperienceInfo = ({ showStoredExperience }) => {
   let displayExperience;

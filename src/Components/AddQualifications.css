@@ -1,0 +1,91 @@
+.qualificationInputs-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.qualificationInputs-container label {
+  padding-left: 0.5rem;
+}
+
+.qualificationInputs-container input {
+  align-self: center;
+  border-radius: 1rem;
+  outline: none;
+  border: 2px solid transparent;
+  height: 3.5rem;
+  width: 100%;
+  padding-left: 1rem;
+  background-color: #f3f4f6;
+  transition: border 0.3s ease;
+}
+
+.qualificationInputs-container input:focus {
+  border-color: #3a83f0;
+  box-shadow: 0px 0px 1px;
+}
+
+.attendance-period {
+  display: flex;
+  gap: 1rem;
+}
+
+.attendance-period input {
+  width: 100%;
+}
+
+.start-attendance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.end-attendance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+#description {
+  height: 6rem;
+}
+
+.updateQualification-container-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.updateQualification-container-buttons button {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gray;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.update-qualification .save-qualification {
+  width: 5rem;
+  background-color: #187ff5;
+  color: var(--secondary-color);
+  border: none;
+}
+
+.update-qualification {
+  display: flex;
+  gap: 1rem;
+}
+.update-qualification .cancel-qualification-action {
+  width: 7rem;
+}
+
+.update-qualification .save-qualification {
+  width: 5rem;
+  background-color: #187ff5;
+  color: var(--secondary-color);
+  border: none;
+}

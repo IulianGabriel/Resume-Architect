@@ -1,5 +1,6 @@
 import { FaRegFileAlt } from "react-icons/fa"; //File icon for "content" button
 import { BiCustomize } from "react-icons/bi"; //icon for "customize" button
+import "./Sidebar.css";
 
 const Sidebar = () => {
   return (

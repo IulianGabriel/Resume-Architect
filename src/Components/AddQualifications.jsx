@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { FaTrash } from "react-icons/fa"; // icon for "clear" button
+import "./AddQualifications.css";
 
 const AddQualifications = ({
   config,

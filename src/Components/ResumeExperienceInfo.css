@@ -1,0 +1,33 @@
+.experience-section {
+  margin: 4rem 4rem 0 4rem;
+}
+
+.experience-section h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  background-color: var(--secondary-color);
+  height: 3rem;
+}
+
+.experience-info {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.experience-info p {
+  font-size: 1.6rem;
+}
+
+.working-period {
+  min-width: 25%;
+}
+
+.working-period p {
+  padding-top: 0.4rem;
+}
+
+.additional-information p {
+  padding-top: 0.5rem;
+}
