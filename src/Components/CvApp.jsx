@@ -149,11 +149,9 @@ const CvApp = () => {
         <ResumePersonalInfo personalInfo={values.personalDetails} />
         <div className="more-information">
           <ResumeEducationInfo
-            educationInfo={values.education}
             showStoredEducation={storeQualifications.education}
           />
           <ResumeExperienceInfo
-            experienceInfo={values.experience}
             showStoredExperience={storeQualifications.experience}
           />
         </div>

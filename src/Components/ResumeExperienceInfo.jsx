@@ -21,6 +21,7 @@ const ResumeExperienceInfo = ({ showStoredExperience }) => {
       </div>
     );
   });
+  
   return (
     <div className="experience-section">
       <h3>Professional Experience</h3>
