@@ -280,6 +280,11 @@ label span {
   font-size: 1.6rem;
 }
 
+
+.school-and-degree p{
+  padding-top: 0.4rem;
+}
+
 .experience-section {
   margin: 4rem 4rem 0 4rem;
 }
@@ -306,9 +311,21 @@ label span {
   min-width: 25%;
 }
 
+.working-period p {
+  padding-top: 0.4rem;
+}
+
 .education-period {
   min-width: 25%;
 }
+
+.education-period p{
+  padding-top: 0.4rem;
+}
+
+.additional-information p{
+  padding-top: 0.5rem;
+  }
 
 #sidebar-active {
   background-color: var(--secondary-color);
@@ -421,3 +438,4 @@ label span {
   cursor: pointer;
   margin: 0.2rem 0;
 }
+

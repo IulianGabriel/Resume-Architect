@@ -20,7 +20,7 @@ const ResumeEducationInfo = ({ showStoredEducation }) => {
       </div>
     );
   });
-  
+
   return (
     <div className="education-section">
       <h3>Education</h3>
