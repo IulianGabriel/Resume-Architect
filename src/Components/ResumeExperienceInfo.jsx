@@ -1,48 +1,26 @@
 import PropTypes from "prop-types";
 
-const ResumeExperienceInfo = ({ experienceInfo, showStoredExperience }) => {
-  const { name, achievement, startDate, endDate, location, jobDescription } =
-    experienceInfo;
-
+const ResumeExperienceInfo = ({ showStoredExperience }) => {
   let displayExperience;
 
-  if (showStoredExperience.length === 0) {
-    displayExperience = (
-      <div className="experience-info">
+  displayExperience = showStoredExperience.map((experience) => {
+    const newId = window.crypto.randomUUID();
+    return (
+      <div className="experience-info" key={newId}>
         <div className="working-period">
           <p>
-            {startDate} - {endDate}
+            {experience.startDate} - {experience.endDate}
           </p>
-          <p>{location}</p>
+          <p>{experience.location}</p>
         </div>
         <div className="additional-information">
-          <p>{name}</p>
-          <p style={{ fontWeight: "bold" }}>{achievement}</p>
-          <p>{jobDescription}</p>
+          <p>{experience.name}</p>
+          <p style={{ fontWeight: "bold" }}>{experience.achievement}</p>
+          <p>{experience.jobDescription}</p>
         </div>
       </div>
     );
-  } else {
-    displayExperience = showStoredExperience.map((experience) => {
-      const newId = window.crypto.randomUUID();
-      return (
-        <div className="experience-info" key={newId}>
-          <div className="working-period">
-            <p>
-              {experience.startDate } - { experience.endDate}
-            </p>
-            <p>{experience.location}</p>
-          </div>
-          <div className="additional-information">
-            <p>{experience.name}</p>
-            <p style={{ fontWeight: "bold" }}>{experience.achievement}</p>
-            <p>{experience.jobDescription}</p>
-          </div>
-        </div>
-      );
-    });
-  }
-
+  });
   return (
     <div className="experience-section">
       <h3>Professional Experience</h3>
@@ -52,14 +30,6 @@ const ResumeExperienceInfo = ({ experienceInfo, showStoredExperience }) => {
 };
 
 ResumeExperienceInfo.propTypes = {
-  experienceInfo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    achievement: PropTypes.string.isRequired,
-    startDate: PropTypes.string.isRequired,
-    endDate: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    jobDescription: PropTypes.string.isRequired,
-  }).isRequired,
   showStoredExperience: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,

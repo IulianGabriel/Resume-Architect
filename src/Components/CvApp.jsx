@@ -39,7 +39,6 @@ const CvApp = () => {
 
   const handleInputs = (e, section) => {
     const { name, value } = e.target;
-    console.log(section, name, value);
     setValues((prev) => ({
       ...prev,
       [section]: { ...prev[section], [name]: value },
