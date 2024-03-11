@@ -1,14 +1,20 @@
-import { FaRegFileAlt } from "react-icons/fa"; //File icon for "content" button
-import { BiCustomize } from "react-icons/bi"; //icon for "customize" button
+import { FaRegFileAlt } from "react-icons/fa";
+import { BiCustomize } from "react-icons/bi";
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ viewMode, handleViewMode }) => {
   return (
     <div className="sidebar">
-      <button id="sidebar-active">
+      <button
+        id={viewMode === "Content" ? "sidebar-active" : null}
+        onClick={() => handleViewMode("Content")}
+      >
         <FaRegFileAlt /> Content
       </button>
-      <button>
+      <button
+        id={viewMode === "Customize" ? "sidebar-active" : null}
+        onClick={() => handleViewMode("Customize")}
+      >
         <BiCustomize /> Customize
       </button>
     </div>

@@ -9,6 +9,7 @@ import { templateResume } from "../util/template";
 import { useState } from "react";
 
 const CvApp = () => {
+  const [viewMode, setViewMode] = useState("Content");
   const [storeQualifications, setStoreQualifications] = useState({
     education: [],
     experience: [],
@@ -121,29 +122,35 @@ const CvApp = () => {
       ],
     });
   };
-
+  const handleViewMode = (currentMode) => {
+    setViewMode(currentMode);
+  };
   return (
     <div className="app-div">
       <section className="customize-resume-container">
-        <Sidebar />
-        <div className="form-container">
-          <ResumeControls
-            handleClearButton={handleClearButton}
-            handleTemplateButton={handleTemplateButton}
-          />
-          <PersonalDetails
-            handlePersonalDetailsInputs={(e) =>
-              handleInputs(e, "personalDetails")
-            }
-            pdInputValues={values.personalDetails}
-          />
-          <Qualifications
-            storeQualifications={storeQualifications}
-            setStoreQualifications={setStoreQualifications}
-            qualificationInputs={values}
-            setQualificationHandle={setValues}
-          />
-        </div>
+        <Sidebar viewMode={viewMode} handleViewMode={handleViewMode} />
+        {viewMode === "Content" ? (
+          <div className="form-container">
+            <ResumeControls
+              handleClearButton={handleClearButton}
+              handleTemplateButton={handleTemplateButton}
+            />
+            <PersonalDetails
+              handlePersonalDetailsInputs={(e) =>
+                handleInputs(e, "personalDetails")
+              }
+              pdInputValues={values.personalDetails}
+            />
+            <Qualifications
+              storeQualifications={storeQualifications}
+              setStoreQualifications={setStoreQualifications}
+              qualificationInputs={values}
+              setQualificationHandle={setValues}
+            />
+          </div>
+        ) : (
+          <p>TEST</p>
+        )}
       </section>
       <section className="resume-container">
         <ResumePersonalInfo personalInfo={values.personalDetails} />
