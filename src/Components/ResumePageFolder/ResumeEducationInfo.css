@@ -30,8 +30,18 @@
 
 .education-period {
   min-width: 25%;
+  max-width: 25%;
+}
+
+.leftRight-education-period {
+  min-width: 40%;
+  max-width: 40%;
 }
 
 .education-period p {
-  padding-top: 0.4rem;
+  padding: 0.4rem 0 0 0.4rem;
+}
+
+.leftRight-education-period p {
+  padding: 0.4rem 0 0 0.4rem;
 }

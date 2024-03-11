@@ -22,10 +22,20 @@
 
 .working-period {
   min-width: 25%;
+  max-width: 25%;
+}
+
+.leftRight-working-period {
+  min-width: 40%;
+  max-width: 40%;
 }
 
 .working-period p {
-  padding-top: 0.4rem;
+  padding: 0.4rem 0 0 0.4rem;
+}
+
+.leftRight-working-period p {
+  padding: 0.4rem 0 0 0.4rem;
 }
 
 .additional-information p {
