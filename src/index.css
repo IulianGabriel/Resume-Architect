@@ -74,3 +74,53 @@ label span {
   flex-direction: column;
   background-color: var(--primary-color);
 }
+
+/*Layout Styling */
+
+.layout-container {
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  height: 16rem;
+  box-shadow: var(--div-box-shadow);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.layout-container h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.layout-buttons button {
+  width: 6rem;
+  height: 8rem;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.layout-buttons div {
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 0.8rem;
+  margin-bottom: 2px;
+}
+
+.layout-top {
+  background: linear-gradient(180deg, #504c5c 50%, #fff 50%);
+}
+
+.layout-left {
+  background: linear-gradient(90deg, #504c5c 50%, #fff 50%);
+}
+
+.layout-right {
+  background: linear-gradient(-90deg, #504c5c 50%, #fff 50%);
+}
