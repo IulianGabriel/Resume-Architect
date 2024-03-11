@@ -227,7 +227,7 @@ label span {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.serif-button.cv-font-active {
+#active-font {
   background-color: #0e374e;
   color: var(--primary-color);
 }

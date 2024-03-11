@@ -14,7 +14,7 @@ import { useState } from "react";
 const CvApp = () => {
   const [viewMode, setViewMode] = useState("Content");
   const [layout, setLayout] = useState("Top");
-
+  const [font, setFont] = useState("Serif");
   const [storeQualifications, setStoreQualifications] = useState({
     education: [],
     experience: [],
@@ -133,6 +133,9 @@ const CvApp = () => {
   const handleLayouts = (position) => {
     setLayout(position);
   };
+  const handleFonts = (fontType) => {
+    setFont(fontType)
+  }
 
   let style;
   if (layout === "Left") {
@@ -143,7 +146,6 @@ const CvApp = () => {
     style = { flexDirection: "column" };
   }
 
-  console.log(layout);
   return (
     <div className="app-div">
       <section className="customize-resume-container">
@@ -172,7 +174,7 @@ const CvApp = () => {
             <>
               <Layout handleLayouts={handleLayouts} />
               <ColorCv />
-              <FontCv />
+              <FontCv handleFonts={handleFonts} font={font} />
             </>
           )}
         </div>
