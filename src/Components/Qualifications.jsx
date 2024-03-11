@@ -19,7 +19,14 @@ const Qualifications = ({
     }));
   };
   return (
-    <Accordion allowToggle>
+    <Accordion
+      allowToggle
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+      }}
+    >
       <AccordionItemComp
         config={{
           text: "Education",
