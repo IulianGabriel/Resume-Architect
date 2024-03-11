@@ -129,28 +129,51 @@ const CvApp = () => {
     <div className="app-div">
       <section className="customize-resume-container">
         <Sidebar viewMode={viewMode} handleViewMode={handleViewMode} />
-        {viewMode === "Content" ? (
-          <div className="form-container">
-            <ResumeControls
-              handleClearButton={handleClearButton}
-              handleTemplateButton={handleTemplateButton}
-            />
-            <PersonalDetails
-              handlePersonalDetailsInputs={(e) =>
-                handleInputs(e, "personalDetails")
-              }
-              pdInputValues={values.personalDetails}
-            />
-            <Qualifications
-              storeQualifications={storeQualifications}
-              setStoreQualifications={setStoreQualifications}
-              qualificationInputs={values}
-              setQualificationHandle={setValues}
-            />
-          </div>
-        ) : (
-          <p>TEST</p>
-        )}
+        <div className="form-container">
+          <ResumeControls
+            handleClearButton={handleClearButton}
+            handleTemplateButton={handleTemplateButton}
+          />
+          {viewMode === "Content" ? (
+            <>
+              <PersonalDetails
+                handlePersonalDetailsInputs={(e) =>
+                  handleInputs(e, "personalDetails")
+                }
+                pdInputValues={values.personalDetails}
+              />
+              <Qualifications
+                storeQualifications={storeQualifications}
+                setStoreQualifications={setStoreQualifications}
+                qualificationInputs={values}
+                setQualificationHandle={setValues}
+              />
+            </>
+          ) : (
+            <>
+            <div>
+              <h2>Layout</h2>
+              <div>
+                <button><div>Top</div></button>
+                <button><div>Left</div></button>
+                <button><div>Right</div></button>
+              </div>
+            </div>
+            <div>
+              <h2>Color</h2>
+              <p>Accent Color<span><input type="color" /></span></p>
+            </div>
+            <div>
+              <h2>Fonts</h2>
+              <div>
+                <button><span>Aa</span>Serif</button>
+                <button><span>Aa</span>Sans</button>
+                <button><span>Aa</span>Mono</button>
+              </div>
+            </div>
+            </>
+          )}
+        </div>
       </section>
       <section className="resume-container">
         <ResumePersonalInfo personalInfo={values.personalDetails} />
