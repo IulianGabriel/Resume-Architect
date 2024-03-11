@@ -2,12 +2,16 @@ const ColorCv = () => {
   return (
     <div className="color-cv-container">
       <h2>Color</h2>
-      <p>
+      <label htmlFor="color">
+        {" "}
         Accent Color
-        <span>
-          <input className="color-input" type="color" />
-        </span>
-      </p>
+        <input
+          className="color-input"
+          id="color"
+          type="color"
+          value="#0e374e"
+        />
+      </label>
     </div>
   );
 };

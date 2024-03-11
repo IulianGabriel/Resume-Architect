@@ -20,13 +20,14 @@
 }
 
 .clear-resume-btn {
+  font-size: 1.6rem;
   color: #c02d2d;
   border: none;
   background-color: var(--primary-color);
 }
 
 .load-template-btn {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   border: none;
   background-color: transparent;
   color: #333;

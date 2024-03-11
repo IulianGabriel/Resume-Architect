@@ -1,13 +1,11 @@
-.roboto-regular {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: serif;
+  font-optical-sizing: auto;
 }
 
 html {
@@ -18,7 +16,6 @@ html {
   --primary-color: #ffffff;
   --secondary-color: #f3f3f3;
   --div-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-family: "Roboto", sans-serif;
   color: #333;
 }
 
@@ -82,15 +79,19 @@ label span {
   background-color: var(--primary-color);
   height: 16rem;
   box-shadow: var(--div-box-shadow);
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
   padding: 2rem;
 }
 
 .layout-container h2 {
-  font-size: 2.6rem;
-  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.layout-buttons {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  align-content: center;
 }
 
 .layout-buttons button {
@@ -99,9 +100,10 @@ label span {
   cursor: pointer;
   border: none;
   background-color: var(--primary-color);
-  text-align: center;
-  padding: 0.8rem;
   font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .layout-buttons div {
@@ -110,17 +112,122 @@ label span {
   background-color: white;
   border: 1px solid gray;
   border-radius: 0.8rem;
-  margin-bottom: 2px;
+  margin-bottom: 2.25px;
 }
 
 .layout-top {
-  background: linear-gradient(180deg, #504c5c 50%, #fff 50%);
+  background: linear-gradient(180deg, #0e374e 50%, #fff 50%);
 }
 
 .layout-left {
-  background: linear-gradient(90deg, #504c5c 50%, #fff 50%);
+  background: linear-gradient(90deg, #0e374e 50%, #fff 50%);
 }
 
 .layout-right {
-  background: linear-gradient(-90deg, #504c5c 50%, #fff 50%);
+  background: linear-gradient(-90deg, #0e374e 50%, #fff 50%);
+}
+
+/* ColorCV styling */
+
+.color-cv-container {
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  height: 12rem;
+  box-shadow: var(--div-box-shadow);
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.color-cv-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.color-cv-container label {
+  font-weight: 500;
+  font-size: 2rem;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.color-input {
+  height: 3.2rem;
+  width: 3.2rem;
+  border: none;
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2); /* Increase spread radius */
+}
+
+.color-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-input::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+/* FontCv Styling */
+
+.font-cv-container {
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  height: 15.5rem;
+  box-shadow: var(--div-box-shadow);
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.font-cv-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.font-select {
+  display: flex;
+  flex-direction: row;
+  gap: 1.3rem;
+}
+
+.font-select button {
+  width: 6rem;
+  height: 7rem;
+  border: 1px solid #000;
+  background-color: var(--primary-color);
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 2rem;
+}
+
+.font-select span {
+  font-size: 2.2rem;
+}
+
+.serif-button,
+.serif-button span {
+  font-family: serif;
+}
+
+.sans-button,
+.sans-button span {
+  font-family: "Open Sans";
+}
+
+.segoe-button,
+.segoe-button span {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.serif-button.cv-font-active {
+  background-color: #0e374e;
+  color: var(--primary-color);
 }
