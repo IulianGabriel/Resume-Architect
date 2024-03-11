@@ -6,6 +6,9 @@ import ResumeEducationInfo from "./ResumePageFolder/ResumeEducationInfo";
 import ResumeExperienceInfo from "./ResumePageFolder/ResumeExperienceInfo";
 import Qualifications from "./QualificationsFolder/Qualifications/Qualifications";
 import { templateResume } from "../util/template";
+import Layout from "./Layout";
+import ColorCv from "./ColorCv";
+import FontCv from "./FontCv";
 import { useState } from "react";
 
 const CvApp = () => {
@@ -151,43 +154,9 @@ const CvApp = () => {
             </>
           ) : (
             <>
-              <div>
-                <h2>Layout</h2>
-                <div>
-                  <button>
-                    <div>Top</div>
-                  </button>
-                  <button>
-                    <div>Left</div>
-                  </button>
-                  <button>
-                    <div>Right</div>
-                  </button>
-                </div>
-              </div>
-              <div>
-                <h2>Color</h2>
-                <p>
-                  Accent Color
-                  <span>
-                    <input type="color" />
-                  </span>
-                </p>
-              </div>
-              <div>
-                <h2>Fonts</h2>
-                <div>
-                  <button>
-                    <span>Aa</span>Serif
-                  </button>
-                  <button>
-                    <span>Aa</span>Sans
-                  </button>
-                  <button>
-                    <span>Aa</span>Mono
-                  </button>
-                </div>
-              </div>
+              <Layout />
+              <ColorCv />
+              <FontCv />
             </>
           )}
         </div>
