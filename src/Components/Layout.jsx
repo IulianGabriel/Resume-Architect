@@ -1,16 +1,19 @@
 const Layout = () => {
   return (
-    <div>
+    <div className="layout-container">
       <h2>Layout</h2>
-      <div>
+      <div className="layout-buttons">
         <button>
-          <div>Top</div>
+          <div className="layout-top"></div>
+          Top
         </button>
         <button>
-          <div>Left</div>
+          <div className="layout-left"></div>
+          Left
         </button>
         <button>
-          <div>Right</div>
+          <div className="layout-right"></div>
+          Right
         </button>
       </div>
     </div>

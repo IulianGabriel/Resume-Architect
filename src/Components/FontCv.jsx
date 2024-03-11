@@ -1,15 +1,15 @@
 const FontCv = () => {
   return (
-    <div>
+    <div className="font-cv-container">
       <h2>Fonts</h2>
-      <div>
-        <button>
+      <div className="font-select">
+        <button className="serif-button">
           <span>Aa</span>Serif
         </button>
-        <button>
+        <button className="sans-button">
           <span>Aa</span>Sans
         </button>
-        <button>
+        <button className="monospace-button">
           <span>Aa</span>Mono
         </button>
       </div>
