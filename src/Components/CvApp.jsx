@@ -127,24 +127,33 @@ const CvApp = () => {
       ],
     });
   };
+
   const handleViewMode = (currentMode) => {
     setViewMode(currentMode);
   };
+
   const handleLayouts = (position) => {
     setLayout(position);
   };
-  const handleFonts = (fontType) => {
-    setFont(fontType)
-  }
 
-  let style;
-  if (layout === "Left") {
-    style = { flexDirection: "row" };
-  } else if (layout === "Right") {
-    style = { flexDirection: "row-reverse" };
-  } else if (layout === "Top") {
-    style = { flexDirection: "column" };
-  }
+  const handleFonts = (fontType) => {
+    setFont(fontType);
+  };
+
+  const layoutStyles = {
+    Left: { flexDirection: "row" },
+    Right: { flexDirection: "row-reverse" },
+    Top: { flexDirection: "column" },
+  };
+
+  const fontStyles = {
+    Serif: { fontFamily: "serif" },
+    Sans: { fontFamily: "Open Sans" },
+    Segoe: { fontFamily: "Segoe UI" },
+  };
+
+  const styleLayout = layoutStyles[layout] || {};
+  const styleFont = fontStyles[font] || {};
 
   return (
     <div className="app-div">
@@ -179,7 +188,10 @@ const CvApp = () => {
           )}
         </div>
       </section>
-      <section className="resume-container" style={style}>
+      <section
+        className="resume-container"
+        style={{ ...styleLayout, ...styleFont }}
+      >
         <ResumePersonalInfo
           personalInfo={values.personalDetails}
           layout={layout}

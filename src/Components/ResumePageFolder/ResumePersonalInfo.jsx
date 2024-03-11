@@ -8,10 +8,12 @@ const ResumePersonalInfo = ({ personalInfo, layout }) => {
   return (
     <div
       className={layout === "Top" ? "personal-info" : "leftRight-personal-info"}
+      style={{ transition: "0.1s all" }}
     >
       <h1>{personalInfo.name}</h1>
       <div
         className={layout === "Top" ? "contact-info" : "leftRight-contact-info"}
+        style={{ transition: "0.1s all" }}
       >
         <span>
           <MdMail /> {personalInfo.email}

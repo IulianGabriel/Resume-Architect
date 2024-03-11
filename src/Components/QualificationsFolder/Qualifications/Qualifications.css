@@ -4,6 +4,7 @@
   border: none;
   background-color: var(--primary-color);
   height: 7rem;
+  font-family: serif;
 }
 
 .qualification span {

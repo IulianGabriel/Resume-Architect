@@ -33,6 +33,7 @@
   background-color: #f3f4f6;
   transition: border 0.3s ease;
   font-size: medium;
+  font-family: serif;
 }
 
 .personal-details input:focus {
