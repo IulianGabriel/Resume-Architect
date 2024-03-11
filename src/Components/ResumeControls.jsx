@@ -1,17 +1,24 @@
 import { FaTrash } from "react-icons/fa"; // icon for "clear" button
+import { HiTemplate } from "react-icons/hi";
+import PropTypes from "prop-types";
+import "./ResumeControls.css";
 
-export default function ResumeControls({
-  handleClearButton,
-  handleTemplateButton,
-}) {
+const ResumeControls = ({ handleClearButton, handleTemplateButton }) => {
   return (
     <div className="resume-controls">
       <button onClick={handleClearButton} className="clear-resume-btn">
         <FaTrash /> Clear Resume
       </button>
       <button onClick={handleTemplateButton} className="load-template-btn">
-        Load Template
+        <HiTemplate /> Load Template
       </button>
     </div>
   );
-}
+};
+
+ResumeControls.propTypes = {
+  handleClearButton: PropTypes.func.isRequired,
+  handleTemplateButton: PropTypes.func.isRequired,
+};
+
+export default ResumeControls;

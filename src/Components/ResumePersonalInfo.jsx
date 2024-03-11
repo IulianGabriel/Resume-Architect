@@ -1,8 +1,10 @@
-import { MdMail } from "react-icons/md"; //icon for "mail"
-import { FaPhoneAlt } from "react-icons/fa"; // icon for "phone"
-import { FaLocationDot } from "react-icons/fa6"; // icon for "location"
+import PropTypes from "prop-types";
+import { MdMail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import "./ResumePersonalInfo.css";
 
-export default function ResumePersonalInfo({ personalInfo }) {
+const ResumePersonalInfo = ({ personalInfo }) => {
   return (
     <div className="personal-info">
       <h1>{personalInfo.name}</h1>
@@ -19,4 +21,15 @@ export default function ResumePersonalInfo({ personalInfo }) {
       </div>
     </div>
   );
-}
+};
+
+ResumePersonalInfo.propTypes = {
+  personalInfo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export default ResumePersonalInfo;

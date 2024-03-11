@@ -1,0 +1,33 @@
+.resume-controls {
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  height: 5rem;
+  box-shadow: var(--div-box-shadow);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.resume-controls button {
+  width: 20rem;
+  height: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.resume-controls button:active {
+  transform: scale(0.95);
+}
+
+.clear-resume-btn {
+  color: #c02d2d;
+  border: none;
+  background-color: var(--primary-color);
+}
+
+.load-template-btn {
+  font-size: 1.4rem;
+  border: none;
+  background-color: transparent;
+  color: #333;
+}
