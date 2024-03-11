@@ -3,13 +3,12 @@ const ColorCv = () => {
     <div className="color-cv-container">
       <h2>Color</h2>
       <label htmlFor="color">
-        {" "}
         Accent Color
         <input
           className="color-input"
           id="color"
           type="color"
-          value="#0e374e"
+          defaultValue="#0e374e"
         />
       </label>
     </div>

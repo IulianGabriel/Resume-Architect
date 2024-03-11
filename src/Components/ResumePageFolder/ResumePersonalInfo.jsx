@@ -4,11 +4,15 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import "./ResumePersonalInfo.css";
 
-const ResumePersonalInfo = ({ personalInfo }) => {
+const ResumePersonalInfo = ({ personalInfo, layout }) => {
   return (
-    <div className="personal-info">
+    <div
+      className={layout === "Top" ? "personal-info" : "leftRight-personal-info"}
+    >
       <h1>{personalInfo.name}</h1>
-      <div className="contact-info">
+      <div
+        className={layout === "Top" ? "contact-info" : "leftRight-contact-info"}
+      >
         <span>
           <MdMail /> {personalInfo.email}
         </span>
@@ -30,6 +34,7 @@ ResumePersonalInfo.propTypes = {
     phoneNumber: PropTypes.string.isRequired,
     address: PropTypes.string.isRequired,
   }).isRequired,
+  layout: PropTypes.string.isRequired,
 };
 
 export default ResumePersonalInfo;

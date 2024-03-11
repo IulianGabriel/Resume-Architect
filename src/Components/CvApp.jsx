@@ -13,6 +13,8 @@ import { useState } from "react";
 
 const CvApp = () => {
   const [viewMode, setViewMode] = useState("Content");
+  const [layout, setLayout] = useState("Top");
+
   const [storeQualifications, setStoreQualifications] = useState({
     education: [],
     experience: [],
@@ -128,6 +130,20 @@ const CvApp = () => {
   const handleViewMode = (currentMode) => {
     setViewMode(currentMode);
   };
+  const handleLayouts = (position) => {
+    setLayout(position);
+  };
+
+  let style;
+  if (layout === "Left") {
+    style = { flexDirection: "row" };
+  } else if (layout === "Right") {
+    style = { flexDirection: "row-reverse" };
+  } else if (layout === "Top") {
+    style = { flexDirection: "column" };
+  }
+
+  console.log(layout);
   return (
     <div className="app-div">
       <section className="customize-resume-container">
@@ -154,21 +170,26 @@ const CvApp = () => {
             </>
           ) : (
             <>
-              <Layout />
+              <Layout handleLayouts={handleLayouts} />
               <ColorCv />
               <FontCv />
             </>
           )}
         </div>
       </section>
-      <section className="resume-container">
-        <ResumePersonalInfo personalInfo={values.personalDetails} />
+      <section className="resume-container" style={style}>
+        <ResumePersonalInfo
+          personalInfo={values.personalDetails}
+          layout={layout}
+        />
         <div className="more-information">
           <ResumeEducationInfo
             showStoredEducation={storeQualifications.education}
+            layout={layout}
           />
           <ResumeExperienceInfo
             showStoredExperience={storeQualifications.experience}
+            layout={layout}
           />
         </div>
       </section>

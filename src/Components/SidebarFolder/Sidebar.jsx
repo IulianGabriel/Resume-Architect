@@ -7,13 +7,13 @@ const Sidebar = ({ viewMode, handleViewMode }) => {
   return (
     <div className="sidebar">
       <button
-        id={viewMode === "Content" ? "sidebar-active" : null}
+        id={viewMode === "Content" ? "sidebar-active" : ""}
         onClick={() => handleViewMode("Content")}
       >
         <FaRegFileAlt /> Content
       </button>
       <button
-        id={viewMode === "Customize" ? "sidebar-active" : null}
+        id={viewMode === "Customize" ? "sidebar-active" : ""}
         onClick={() => handleViewMode("Customize")}
       >
         <BiCustomize /> Customize
