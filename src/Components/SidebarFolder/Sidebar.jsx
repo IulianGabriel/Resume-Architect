@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FaRegFileAlt } from "react-icons/fa";
 import { BiCustomize } from "react-icons/bi";
 import "./Sidebar.css";
@@ -19,6 +20,11 @@ const Sidebar = ({ viewMode, handleViewMode }) => {
       </button>
     </div>
   );
+};
+
+Sidebar.propTypes = {
+  viewMode: PropTypes.oneOf(["Content", "Customize"]).isRequired,
+  handleViewMode: PropTypes.func.isRequired,
 };
 
 export default Sidebar;

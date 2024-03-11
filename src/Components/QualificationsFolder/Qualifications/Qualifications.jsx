@@ -1,4 +1,4 @@
-import AccordionItemComp from "./AccordionItemComp";
+import AccordionItemComp from "../AccordionItemComp";
 import { Accordion } from "@chakra-ui/accordion";
 import { FaBriefcase } from "react-icons/fa"; // icon for "experience"
 import { GiOpenBook } from "react-icons/gi";

@@ -1,10 +1,10 @@
-import Sidebar from "./Sidebar";
-import ResumeControls from "./ResumeControls";
-import PersonalDetails from "./PersonalDetails";
-import ResumePersonalInfo from "./ResumePersonalInfo";
-import ResumeEducationInfo from "./ResumeEducationInfo";
-import ResumeExperienceInfo from "./ResumeExperienceInfo";
-import Qualifications from "./Qualifications";
+import Sidebar from "./SidebarFolder/Sidebar";
+import ResumeControls from "./ResumeControlButtonsFolder/ResumeControls";
+import PersonalDetails from "./PersonalDetailsFolder/PersonalDetails";
+import ResumePersonalInfo from "./ResumePageFolder/ResumePersonalInfo";
+import ResumeEducationInfo from "./ResumePageFolder/ResumeEducationInfo";
+import ResumeExperienceInfo from "./ResumePageFolder/ResumeExperienceInfo";
+import Qualifications from "./QualificationsFolder/Qualifications/Qualifications";
 import { templateResume } from "../util/template";
 import { useState } from "react";
 
@@ -151,26 +151,43 @@ const CvApp = () => {
             </>
           ) : (
             <>
-            <div>
-              <h2>Layout</h2>
               <div>
-                <button><div>Top</div></button>
-                <button><div>Left</div></button>
-                <button><div>Right</div></button>
+                <h2>Layout</h2>
+                <div>
+                  <button>
+                    <div>Top</div>
+                  </button>
+                  <button>
+                    <div>Left</div>
+                  </button>
+                  <button>
+                    <div>Right</div>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div>
-              <h2>Color</h2>
-              <p>Accent Color<span><input type="color" /></span></p>
-            </div>
-            <div>
-              <h2>Fonts</h2>
               <div>
-                <button><span>Aa</span>Serif</button>
-                <button><span>Aa</span>Sans</button>
-                <button><span>Aa</span>Mono</button>
+                <h2>Color</h2>
+                <p>
+                  Accent Color
+                  <span>
+                    <input type="color" />
+                  </span>
+                </p>
               </div>
-            </div>
+              <div>
+                <h2>Fonts</h2>
+                <div>
+                  <button>
+                    <span>Aa</span>Serif
+                  </button>
+                  <button>
+                    <span>Aa</span>Sans
+                  </button>
+                  <button>
+                    <span>Aa</span>Mono
+                  </button>
+                </div>
+              </div>
             </>
           )}
         </div>

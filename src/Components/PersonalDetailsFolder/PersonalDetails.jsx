@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { templateResume } from "../util/template";
+import { templateResume } from "../../util/template";
 import "./PersonalDetails.css";
 
 const PersonalDetails = ({ handlePersonalDetailsInputs, pdInputValues }) => {
