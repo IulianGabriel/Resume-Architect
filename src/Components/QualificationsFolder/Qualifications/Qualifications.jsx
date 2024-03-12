@@ -1,4 +1,4 @@
-import AccordionItemComp from "./AccordionItemComp";
+import AccordionItemComp from "../AccordionItemComp";
 import { Accordion } from "@chakra-ui/accordion";
 import { FaBriefcase } from "react-icons/fa"; // icon for "experience"
 import { GiOpenBook } from "react-icons/gi";
@@ -19,7 +19,14 @@ const Qualifications = ({
     }));
   };
   return (
-    <Accordion allowToggle>
+    <Accordion
+      allowToggle
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+      }}
+    >
       <AccordionItemComp
         config={{
           text: "Education",

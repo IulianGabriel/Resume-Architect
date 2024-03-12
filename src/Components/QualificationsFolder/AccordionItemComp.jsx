@@ -1,4 +1,4 @@
-import AddQualifications from "./AddQualifications";
+import AddQualifications from "./AddQualifications/AddQualifications";
 import { useState } from "react";
 import {
   AccordionItem,
@@ -17,7 +17,6 @@ const AccordionItemComp = ({ config }) => {
     icon,
     qualificationInputs,
   } = config;
-
   const [addQualifications, setAddQualifications] = useState(false);
   const [controlButtons, setControlButtons] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -129,7 +128,6 @@ const AccordionItemComp = ({ config }) => {
       }
     );
   }
-
   return (
     <AccordionItem className="qualification-container">
       <AccordionButton className="qualification">

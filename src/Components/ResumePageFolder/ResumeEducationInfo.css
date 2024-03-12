@@ -6,9 +6,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   background-color: var(--secondary-color);
-  height: 3rem;
+  height: 4rem;
+  color: #333
 }
 
 .education-section p {
@@ -30,8 +31,18 @@
 
 .education-period {
   min-width: 25%;
+  max-width: 25%;
+}
+
+.leftRight-education-period {
+  min-width: 40%;
+  max-width: 40%;
 }
 
 .education-period p {
-  padding-top: 0.4rem;
+  padding: 0.4rem 0 0 0.4rem;
+}
+
+.leftRight-education-period p {
+  padding: 0.4rem 0 0 0.4rem;
 }

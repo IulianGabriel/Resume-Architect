@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
 import "./ResumeExperienceInfo.css";
 
-const ResumeExperienceInfo = ({ showStoredExperience }) => {
+const ResumeExperienceInfo = ({ showStoredExperience, layout }) => {
   let displayExperience;
 
   displayExperience = showStoredExperience.map((experience) => {
     const newId = window.crypto.randomUUID();
     return (
       <div className="experience-info" key={newId}>
-        <div className="working-period">
+        <div
+          className={
+            layout === "Top" ? "working-period" : "leftRight-working-period"
+          }
+        >
           <p>
             {experience.startDate} - {experience.endDate}
           </p>
@@ -42,6 +46,7 @@ ResumeExperienceInfo.propTypes = {
       jobDescription: PropTypes.string.isRequired,
     })
   ).isRequired,
+  layout: PropTypes.string.isRequired,
 };
 
 export default ResumeExperienceInfo;

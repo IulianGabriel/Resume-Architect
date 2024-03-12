@@ -1,0 +1,46 @@
+/*Layout Styling */
+
+.layout-container {
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  height: 16rem;
+  box-shadow: var(--div-box-shadow);
+  padding: 2rem;
+}
+
+.layout-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.layout-buttons {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  align-content: center;
+}
+
+.layout-buttons button {
+  width: 6rem;
+  height: 8rem;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary-color);
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layout-buttons button:active {
+  transform: scale(0.95);
+}
+
+.layout-buttons div {
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 0.8rem;
+  margin-bottom: 2.25px;
+}

@@ -1,4 +1,4 @@
-import { FaTrash } from "react-icons/fa"; // icon for "clear" button
+import { FaTrash } from "react-icons/fa";
 import { HiTemplate } from "react-icons/hi";
 import PropTypes from "prop-types";
 import "./ResumeControls.css";
