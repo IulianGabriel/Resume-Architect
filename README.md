@@ -4,10 +4,10 @@
   <a href="https://resume-architect-gamma.vercel.app" style="display:inline-block;">Live App</a>
 </p>
 
-<span>
-<img src="src/assets/firstPhoto.jpg" alt="resume-architect" width="500">
-<img src="src/assets/secondPhoto.jpg" alt="resume-architect" width="500">
-
+<div align="center">
+  <img src="src/assets/firstPhoto.jpg" alt="resume-architect" width="400" style="margin-right: 20px;">
+  <img src="src/assets/secondPhoto.jpg" alt="resume-architect" width="400">
+</div>
 
 ## Overview
 
@@ -42,25 +42,32 @@ The following technologies and libraries were used in the development of Resume 
 To get a local copy up and running, follow these steps:
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/IulianGabriel/Resume-Architect.git
-    ```
+
+   ```bash
+   git clone https://github.com/IulianGabriel/Resume-Architect.git
+   ```
 
 2. Navigate to the project directory:
-    ```bash
-    cd Resume-Architect
-    ```
+
+   ```bash
+   cd Resume-Architect
+   ```
 
 3. Install dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 4. Start the development server:
-    ```bash
-    npm run dev
-    ```
-    
+   ```bash
+   npm run dev
+   ```
+
 # Deployment
 
 The application is hosted on Vercel, ensuring high availability and seamless deployment. Additionally, continuous integration and deployment pipelines can be set up using Vercel's GitHub integration.
+
+# License
+
+This project is licensed under the MIT License.
