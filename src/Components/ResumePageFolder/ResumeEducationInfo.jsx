@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
 import "./ResumeEducationInfo.css";
 
-const ResumeEducationInfo = ({ showStoredEducation }) => {
+const ResumeEducationInfo = ({ showStoredEducation, layout }) => {
   let displayEducation;
 
   displayEducation = showStoredEducation.map((education) => {
     const newId = window.crypto.randomUUID();
     return (
       <div className="education-info" key={newId}>
-        <div className="education-period">
+        <div
+          className={
+            layout === "Top" ? "education-period" : "leftRight-education-period"
+          }
+        >
           <p>
             {education.startDate} - {education.endDate}
           </p>
@@ -40,6 +44,7 @@ ResumeEducationInfo.propTypes = {
       achievement: PropTypes.string.isRequired,
     })
   ).isRequired,
+  layout: PropTypes.string.isRequired,
 };
 
 export default ResumeEducationInfo;

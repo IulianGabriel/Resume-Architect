@@ -1,0 +1,43 @@
+/* ColorCV styling */
+
+.color-cv-container {
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  height: 12rem;
+  box-shadow: var(--div-box-shadow);
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.color-cv-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.color-cv-container label {
+  font-weight: 500;
+  font-size: 2rem;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.color-input {
+  height: 3.2rem;
+  width: 3.2rem;
+  border: none;
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2); /* Increase spread radius */
+}
+
+.color-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-input::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}

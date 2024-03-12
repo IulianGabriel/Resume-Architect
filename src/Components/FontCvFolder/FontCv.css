@@ -1,0 +1,64 @@
+/* FontCv Styling */
+
+.font-cv-container {
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  height: 15.5rem;
+  box-shadow: var(--div-box-shadow);
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.font-cv-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.font-select {
+  display: flex;
+  flex-direction: row;
+  gap: 1.3rem;
+}
+
+.font-select button {
+  width: 6rem;
+  height: 7rem;
+  border: 1px solid #000;
+  background-color: var(--primary-color);
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 2rem;
+}
+
+.font-select button:active {
+  transform: scale(0.95);
+}
+
+.font-select span {
+  font-size: 2.2rem;
+}
+
+.serif-button,
+.serif-button span {
+  font-family: serif;
+}
+
+.sans-button,
+.sans-button span {
+  font-family: "Open Sans";
+}
+
+.segoe-button,
+.segoe-button span {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#active-font {
+  background-color: #0e374e;
+  color: var(--primary-color);
+}

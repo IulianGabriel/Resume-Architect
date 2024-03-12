@@ -17,6 +17,8 @@
   padding-left: 1rem;
   background-color: #f3f4f6;
   transition: border 0.3s ease;
+  font-size: medium;
+  font-family: serif;
 }
 
 .qualificationInputs-container input:focus {
@@ -66,26 +68,29 @@
   color: gray;
   font-weight: bolder;
   cursor: pointer;
+  font-size: 1.4rem;
 }
 
-.update-qualification .save-qualification {
-  width: 5rem;
-  background-color: #187ff5;
-  color: var(--secondary-color);
-  border: none;
+.updateQualification-container-buttons button:active{
+  transform: scale(0.95);
 }
 
 .update-qualification {
   display: flex;
   gap: 1rem;
 }
+
 .update-qualification .cancel-qualification-action {
-  width: 7rem;
+  width: 7.5rem;
 }
 
 .update-qualification .save-qualification {
-  width: 5rem;
+  width: 6rem;
   background-color: #187ff5;
   color: var(--secondary-color);
   border: none;
+}
+
+.updateQualification-container-buttons .delete-qualification {
+  width: 9rem;
 }
