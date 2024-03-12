@@ -12,6 +12,7 @@ import FontCv from "./FontCvFolder/FontCv";
 import { BsFileEarmarkPdf } from "react-icons/bs";
 import { FaDownload } from "react-icons/fa";
 import { useState } from "react";
+import { usePDF } from "react-to-pdf";
 
 const CvApp = () => {
   const [viewMode, setViewMode] = useState("Content");
@@ -179,6 +180,10 @@ const CvApp = () => {
   const styleLayout = layoutStyles[layout] || {};
   const styleFont = fontStyles[font] || {};
 
+  const { toPDF, targetRef } = usePDF({
+    filename: `CV ${values.personalDetails.name}`,
+  });
+
   return (
     <div className="app-div">
       <section className="customize-resume-container">
@@ -211,7 +216,7 @@ const CvApp = () => {
             </>
           )}
           <div className="download-button-container">
-            <button id="download-button">
+            <button id="download-button" onClick={() => toPDF()}>
               <span>
                 <BsFileEarmarkPdf /> Download
               </span>
@@ -221,6 +226,7 @@ const CvApp = () => {
         </div>
       </section>
       <section
+        ref={targetRef}
         className="resume-container"
         style={{ ...styleLayout, ...styleFont }}
       >
