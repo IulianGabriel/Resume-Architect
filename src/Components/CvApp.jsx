@@ -9,6 +9,8 @@ import { templateResume } from "../util/template";
 import Layout from "./LayoutFolder/Layout";
 import ColorCv from "./ColorCvFolder/ColorCv";
 import FontCv from "./FontCvFolder/FontCv";
+import { BsFileEarmarkPdf } from "react-icons/bs";
+import { FaDownload } from "react-icons/fa";
 import { useState } from "react";
 
 const CvApp = () => {
@@ -208,6 +210,14 @@ const CvApp = () => {
               <FontCv handleFonts={handleFonts} font={font} color={color} />
             </>
           )}
+          <div className="download-button-container">
+            <button id="download-button">
+              <span>
+                <BsFileEarmarkPdf /> Download
+              </span>
+              <FaDownload />
+            </button>
+          </div>
         </div>
       </section>
       <section

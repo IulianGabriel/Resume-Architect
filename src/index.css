@@ -69,3 +69,38 @@ label span {
   flex-direction: column;
   background-color: var(--primary-color);
 }
+
+.download-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#download-button {
+  font-family: serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+  width: 50rem;
+  height: 6rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid rgba(241, 227, 227, 0.5);
+  color: #c02d2d;
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: var(--div-box-shadow);
+  transition: 0.25s all;
+}
+
+#download-button span {
+  display: flex;
+  gap: 1rem;
+}
+
+#download-button:active {
+  transform: scale(0.95);
+}
