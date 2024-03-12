@@ -61,14 +61,6 @@ const CvApp = () => {
     },
   });
 
-  const handleInputs = (e, section) => {
-    const { name, value } = e.target;
-    setValues((prev) => ({
-      ...prev,
-      [section]: { ...prev[section], [name]: value },
-    }));
-  };
-
   const handleClearButton = () => {
     setValues({
       personalDetails: {
@@ -144,6 +136,14 @@ const CvApp = () => {
         },
       ],
     });
+  };
+
+  const handleInputs = (e, section) => {
+    const { name, value } = e.target;
+    setValues((prev) => ({
+      ...prev,
+      [section]: { ...prev[section], [name]: value },
+    }));
   };
 
   const handleViewMode = (currentMode) => {

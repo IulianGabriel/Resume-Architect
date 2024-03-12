@@ -17,14 +17,13 @@ const AccordionItemComp = ({ config }) => {
     icon,
     qualificationInputs,
   } = config;
-
   const [addQualifications, setAddQualifications] = useState(false);
   const [controlButtons, setControlButtons] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editedIndex, setEditedIndex] = useState(null);
   const arrayToUpdate = text === "Education" ? "education" : "experience";
   const updatedQualifications = [...storeQualifications[arrayToUpdate]];
-  
+
   const handleAddQualificationButton = () => {
     setStoreQualifications((prevState) => ({
       ...prevState,
@@ -129,7 +128,6 @@ const AccordionItemComp = ({ config }) => {
       }
     );
   }
-
   return (
     <AccordionItem className="qualification-container">
       <AccordionButton className="qualification">

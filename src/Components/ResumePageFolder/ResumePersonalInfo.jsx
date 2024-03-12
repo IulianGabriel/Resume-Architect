@@ -6,8 +6,6 @@ import { calculateColorBrightness } from "../../util/colorUtils";
 import "./ResumePersonalInfo.css";
 
 const ResumePersonalInfo = ({ personalInfo, layout, color }) => {
-  
-  // Calculate the brightness of the background color
   const brightness = calculateColorBrightness(color);
   const textColor = brightness > 128 ? "#333" : "white";
 
