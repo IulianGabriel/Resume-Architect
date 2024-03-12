@@ -87,9 +87,9 @@ label span {
   height: 6rem;
   font-size: 2rem;
   font-weight: bold;
-  border: 2px solid rgba(231, 231, 231, 0.507);
-  color: #c02d2d;
-  background-color: var(--primary-color);
+  border: none;
+  background-color: #0e374e;
+  color: var(--primary-color);
   border-radius: 1rem;
   cursor: pointer;
   box-shadow: var(--div-box-shadow);
