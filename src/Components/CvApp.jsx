@@ -6,9 +6,9 @@ import ResumeEducationInfo from "./ResumePageFolder/ResumeEducationInfo";
 import ResumeExperienceInfo from "./ResumePageFolder/ResumeExperienceInfo";
 import Qualifications from "./QualificationsFolder/Qualifications/Qualifications";
 import { templateResume } from "../util/template";
-import Layout from "./Layout";
-import ColorCv from "./ColorCv";
-import FontCv from "./FontCv";
+import Layout from "./LayoutFolder/Layout";
+import ColorCv from "./ColorCvFolder/ColorCv";
+import FontCv from "./FontCvFolder/FontCv";
 import { useState } from "react";
 
 const CvApp = () => {

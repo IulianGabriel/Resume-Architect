@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import { calculateColorBrightness } from "../util/colorUtils";
+import { calculateColorBrightness } from "../../util/colorUtils";
+import "./FontCv.css";
 
 const FontCv = ({ handleFonts, font, color }) => {
   const brightness = calculateColorBrightness(color);

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./Layout.css";
 
 const Layout = ({ handleLayouts, color }) => {
   return (
