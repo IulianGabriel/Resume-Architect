@@ -17,30 +17,47 @@ const CvApp = () => {
   const [font, setFont] = useState("Serif");
   const [color, setColor] = useState("#0e374e");
   const [storeQualifications, setStoreQualifications] = useState({
-    education: [],
-    experience: [],
+    education: [
+      {
+        name: templateResume.education[0].name,
+        achievement: templateResume.education[0].achievement,
+        startDate: templateResume.education[0].startDate,
+        endDate: templateResume.education[0].endDate,
+        location: templateResume.education[0].location,
+      },
+    ],
+    experience: [
+      {
+        name: templateResume.experience[0].name,
+        achievement: templateResume.experience[0].achievement,
+        startDate: templateResume.experience[0].startDate,
+        endDate: templateResume.experience[0].endDate,
+        location: templateResume.experience[0].location,
+        jobDescription: templateResume.experience[0].jobDescription,
+      },
+    ],
   });
   const [values, setValues] = useState({
     personalDetails: {
-      name: "",
-      email: "",
-      phoneNumber: "",
-      address: "",
+      name: templateResume.personalDetails.name,
+      email: templateResume.personalDetails.email,
+      phoneNumber: templateResume.personalDetails.phoneNumber,
+      address: templateResume.personalDetails.address,
     },
     education: {
-      name: "",
-      achievement: "",
-      startDate: "",
-      endDate: "",
-      location: "",
+      name: templateResume.education[0].name,
+      achievement: templateResume.education[0].achievement,
+      startDate: templateResume.education[0].startDate,
+      endDate: templateResume.education[0].endDate,
+      location: templateResume.education[0].location,
     },
     experience: {
-      name: "",
-      achievement: "",
-      startDate: "",
-      endDate: "",
-      location: "",
-      jobDescription: "",
+      name: templateResume.experience[0].name,
+      achievement: templateResume.experience[0].achievement,
+      startDate: templateResume.experience[0].startDate,
+      endDate: templateResume.experience[0].endDate,
+      location: templateResume.experience[0].location,
+      jobDescription: templateResume.experience[0].jobDescription,
     },
   });
 
