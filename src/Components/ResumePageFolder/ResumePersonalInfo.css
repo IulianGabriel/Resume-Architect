@@ -1,10 +1,14 @@
 /* styling resume container */
-.resume-container, .resume-container > * {
+.resume-container,
+.resume-container > * {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
   width: 80rem;
   height: 112rem;
+}
+
+.resume-container {
+  margin-top: 3rem;
 }
 
 .personal-info {
@@ -14,6 +18,7 @@
   align-items: center;
   background-color: #0e374e;
   height: 12rem;
+  color: var(--secondary-color);
 }
 
 .leftRight-personal-info {
@@ -28,7 +33,6 @@
 
 .personal-info h1 {
   font-size: 3rem;
-  color: var(--secondary-color);
 }
 
 .leftRight-personal-info h1 {

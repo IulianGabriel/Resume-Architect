@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
+import { calculateColorBrightness } from "../util/colorUtils";
 
-const FontCv = ({ handleFonts, font }) => {
+const FontCv = ({ handleFonts, font, color }) => {
+  const brightness = calculateColorBrightness(color);
+  const textColor = brightness > 128 ? "#333" : "white";
+
   return (
     <div className="font-cv-container">
       <h2>Fonts</h2>
@@ -9,6 +13,11 @@ const FontCv = ({ handleFonts, font }) => {
           className="serif-button"
           id={font === "Serif" ? "active-font" : ""}
           onClick={() => handleFonts("Serif")}
+          style={
+            font === "Serif"
+              ? { color: textColor, backgroundColor: color }
+              : null
+          }
         >
           <span>Aa</span>
           Serif
@@ -17,6 +26,11 @@ const FontCv = ({ handleFonts, font }) => {
           className="sans-button"
           id={font === "Sans" ? "active-font" : ""}
           onClick={() => handleFonts("Sans")}
+          style={
+            font === "Sans"
+              ? { color: textColor, backgroundColor: color }
+              : null
+          }
         >
           <span>Aa</span>
           Sans
@@ -25,6 +39,11 @@ const FontCv = ({ handleFonts, font }) => {
           className="segoe-button"
           id={font === "Segoe" ? "active-font" : ""}
           onClick={() => handleFonts("Segoe")}
+          style={
+            font === "Segoe"
+              ? { color: textColor, backgroundColor: color }
+              : null
+          }
         >
           <span>Aa</span>
           Segoe
@@ -37,6 +56,7 @@ const FontCv = ({ handleFonts, font }) => {
 FontCv.propTypes = {
   handleFonts: PropTypes.func.isRequired,
   font: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default FontCv;

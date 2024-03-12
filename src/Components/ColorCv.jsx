@@ -1,4 +1,6 @@
-const ColorCv = () => {
+import PropTypes from "prop-types";
+
+const ColorCv = ({ color, handleColor }) => {
   return (
     <div className="color-cv-container">
       <h2>Color</h2>
@@ -8,11 +10,17 @@ const ColorCv = () => {
           className="color-input"
           id="color"
           type="color"
-          defaultValue="#0e374e"
+          value={color}
+          onChange={handleColor}
         />
       </label>
     </div>
   );
+};
+
+ColorCv.propTypes = {
+  color: PropTypes.string.isRequired,
+  handleColor: PropTypes.func.isRequired,
 };
 
 export default ColorCv;

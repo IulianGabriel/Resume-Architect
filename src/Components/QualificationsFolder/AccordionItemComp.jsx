@@ -24,7 +24,7 @@ const AccordionItemComp = ({ config }) => {
   const [editedIndex, setEditedIndex] = useState(null);
   const arrayToUpdate = text === "Education" ? "education" : "experience";
   const updatedQualifications = [...storeQualifications[arrayToUpdate]];
-  console.log(controlButtons);
+  
   const handleAddQualificationButton = () => {
     setStoreQualifications((prevState) => ({
       ...prevState,

@@ -15,6 +15,7 @@ const CvApp = () => {
   const [viewMode, setViewMode] = useState("Content");
   const [layout, setLayout] = useState("Top");
   const [font, setFont] = useState("Serif");
+  const [color, setColor] = useState("#0e374e");
   const [storeQualifications, setStoreQualifications] = useState({
     education: [],
     experience: [],
@@ -140,6 +141,10 @@ const CvApp = () => {
     setFont(fontType);
   };
 
+  const handleColor = (e) => {
+    setColor(e.target.value);
+  };
+
   const layoutStyles = {
     Left: { flexDirection: "row" },
     Right: { flexDirection: "row-reverse" },
@@ -181,9 +186,9 @@ const CvApp = () => {
             </>
           ) : (
             <>
-              <Layout handleLayouts={handleLayouts} />
-              <ColorCv />
-              <FontCv handleFonts={handleFonts} font={font} />
+              <Layout handleLayouts={handleLayouts} color={color} />
+              <ColorCv color={color} handleColor={handleColor} />
+              <FontCv handleFonts={handleFonts} font={font} color={color} />
             </>
           )}
         </div>
@@ -195,6 +200,7 @@ const CvApp = () => {
         <ResumePersonalInfo
           personalInfo={values.personalDetails}
           layout={layout}
+          color={color}
         />
         <div className="more-information">
           <ResumeEducationInfo

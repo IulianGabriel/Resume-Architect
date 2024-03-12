@@ -117,18 +117,6 @@ label span {
   margin-bottom: 2.25px;
 }
 
-.layout-top {
-  background: linear-gradient(180deg, #0e374e 50%, #fff 50%);
-}
-
-.layout-left {
-  background: linear-gradient(90deg, #0e374e 50%, #fff 50%);
-}
-
-.layout-right {
-  background: linear-gradient(-90deg, #0e374e 50%, #fff 50%);
-}
-
 /* ColorCV styling */
 
 .color-cv-container {
@@ -236,5 +224,4 @@ label span {
 #active-font {
   background-color: #0e374e;
   color: var(--primary-color);
-  transition: 0.2s all;
 }
