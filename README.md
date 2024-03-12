@@ -64,6 +64,10 @@ To get a local copy up and running, follow these steps:
    npm run dev
    ```
 
+## Acknowledgements
+
+Special thanks to my friend "eIonut" for their valuable feedback and assistance with code review during the development of this project.
+
 # Deployment
 
 The application is hosted on Vercel, ensuring high availability and seamless deployment. Additionally, continuous integration and deployment pipelines can be set up using Vercel's GitHub integration.
