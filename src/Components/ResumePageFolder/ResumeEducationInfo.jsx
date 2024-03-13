@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
 import "./ResumeEducationInfo.css";
 
+// Component for displaying education information on the resume
 const ResumeEducationInfo = ({ showStoredEducation, layout }) => {
   let displayEducation;
 
+  // Map stored education data to JSX elements
   displayEducation = showStoredEducation.map((education) => {
+    // Generate unique key for each education entry
     const newId = window.crypto.randomUUID();
     return (
       <div className="education-info" key={newId}>
@@ -29,11 +32,13 @@ const ResumeEducationInfo = ({ showStoredEducation, layout }) => {
   return (
     <div className="education-section">
       <h3>Education</h3>
+      {/* Display mapped education entries */}
       {displayEducation}
     </div>
   );
 };
 
+// Prop type validation for ResumeEducationInfo component
 ResumeEducationInfo.propTypes = {
   showStoredEducation: PropTypes.arrayOf(
     PropTypes.shape({

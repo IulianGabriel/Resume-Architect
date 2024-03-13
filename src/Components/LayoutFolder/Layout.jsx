@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import "./Layout.css";
 
+// Define the Layout component
 const Layout = ({ handleLayouts, color }) => {
   return (
     <div className="layout-container">
@@ -38,6 +39,7 @@ const Layout = ({ handleLayouts, color }) => {
   );
 };
 
+// Define prop types for the Layout component
 Layout.propTypes = {
   handleLayouts: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired,

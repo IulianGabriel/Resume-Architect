@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { templateResume } from "../../util/template";
 import "./PersonalDetails.css";
 
+// Define the PersonalDetails component
 const PersonalDetails = ({ handlePersonalDetailsInputs, pdInputValues }) => {
   return (
     <form className="personal-details">
@@ -52,6 +53,7 @@ const PersonalDetails = ({ handlePersonalDetailsInputs, pdInputValues }) => {
   );
 };
 
+// Define prop types for the PersonalDetails component
 PersonalDetails.propTypes = {
   handlePersonalDetailsInputs: PropTypes.func.isRequired,
   pdInputValues: PropTypes.shape({

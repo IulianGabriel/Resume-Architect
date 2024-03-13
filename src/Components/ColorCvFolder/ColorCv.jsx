@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import "./ColorCv.css";
 
+// Define the ColorCv component
 const ColorCv = ({ color, handleColor }) => {
   return (
     <div className="color-cv-container">
@@ -19,6 +20,7 @@ const ColorCv = ({ color, handleColor }) => {
   );
 };
 
+// Define prop types for the ColorCv component
 ColorCv.propTypes = {
   color: PropTypes.string.isRequired,
   handleColor: PropTypes.func.isRequired,

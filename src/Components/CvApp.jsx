@@ -1,3 +1,8 @@
+import React, { useState } from "react";
+import { templateResume } from "../util/template";
+import { BsFileEarmarkPdf } from "react-icons/bs";
+import { FaDownload } from "react-icons/fa";
+import { usePDF } from "react-to-pdf";
 import Sidebar from "./SidebarFolder/Sidebar";
 import ResumeControls from "./ResumeControlButtonsFolder/ResumeControls";
 import PersonalDetails from "./PersonalDetailsFolder/PersonalDetails";
@@ -5,73 +10,30 @@ import ResumePersonalInfo from "./ResumePageFolder/ResumePersonalInfo";
 import ResumeEducationInfo from "./ResumePageFolder/ResumeEducationInfo";
 import ResumeExperienceInfo from "./ResumePageFolder/ResumeExperienceInfo";
 import Qualifications from "./QualificationsFolder/Qualifications/Qualifications";
-import { templateResume } from "../util/template";
 import Layout from "./LayoutFolder/Layout";
 import ColorCv from "./ColorCvFolder/ColorCv";
 import FontCv from "./FontCvFolder/FontCv";
-import { BsFileEarmarkPdf } from "react-icons/bs";
-import { FaDownload } from "react-icons/fa";
-import { useState } from "react";
-import { usePDF } from "react-to-pdf";
 
 const CvApp = () => {
+  // State for controlling different aspects of the CV
   const [viewMode, setViewMode] = useState("Content");
   const [layout, setLayout] = useState("Top");
   const [font, setFont] = useState("Serif");
   const [color, setColor] = useState("#0e374e");
   const [storeQualifications, setStoreQualifications] = useState({
-    education: [
-      {
-        name: templateResume.education[0].name,
-        achievement: templateResume.education[0].achievement,
-        startDate: templateResume.education[0].startDate,
-        endDate: templateResume.education[0].endDate,
-        location: templateResume.education[0].location,
-      },
-    ],
-    experience: [
-      {
-        name: templateResume.experience[0].name,
-        achievement: templateResume.experience[0].achievement,
-        startDate: templateResume.experience[0].startDate,
-        endDate: templateResume.experience[0].endDate,
-        location: templateResume.experience[0].location,
-        jobDescription: templateResume.experience[0].jobDescription,
-      },
-    ],
+    education: [templateResume.education[0]],
+    experience: [templateResume.experience[0]],
   });
   const [values, setValues] = useState({
-    personalDetails: {
-      name: templateResume.personalDetails.name,
-      email: templateResume.personalDetails.email,
-      phoneNumber: templateResume.personalDetails.phoneNumber,
-      address: templateResume.personalDetails.address,
-    },
-    education: {
-      name: templateResume.education[0].name,
-      achievement: templateResume.education[0].achievement,
-      startDate: templateResume.education[0].startDate,
-      endDate: templateResume.education[0].endDate,
-      location: templateResume.education[0].location,
-    },
-    experience: {
-      name: templateResume.experience[0].name,
-      achievement: templateResume.experience[0].achievement,
-      startDate: templateResume.experience[0].startDate,
-      endDate: templateResume.experience[0].endDate,
-      location: templateResume.experience[0].location,
-      jobDescription: templateResume.experience[0].jobDescription,
-    },
+    personalDetails: templateResume.personalDetails,
+    education: templateResume.education[0],
+    experience: templateResume.experience[0],
   });
 
+  // Handlers for different actions
   const handleClearButton = () => {
     setValues({
-      personalDetails: {
-        name: "",
-        email: "",
-        phoneNumber: "",
-        address: "",
-      },
+      personalDetails: { name: "", email: "", phoneNumber: "", address: "" },
       education: {
         name: "",
         achievement: "",
@@ -88,63 +50,29 @@ const CvApp = () => {
         jobDescription: "",
       },
     });
-    setStoreQualifications({
-      education: [],
-      experience: [],
-    });
+    setStoreQualifications({ education: [], experience: [] });
   };
 
   const handleTemplateButton = () => {
     setValues({
-      personalDetails: {
-        name: templateResume.personalDetails.name,
-        email: templateResume.personalDetails.email,
-        phoneNumber: templateResume.personalDetails.phoneNumber,
-        address: templateResume.personalDetails.address,
-      },
-      education: {
-        name: templateResume.education[0].name,
-        achievement: templateResume.education[0].achievement,
-        startDate: templateResume.education[0].startDate,
-        endDate: templateResume.education[0].endDate,
-        location: templateResume.education[0].location,
-      },
-      experience: {
-        name: templateResume.experience[0].name,
-        achievement: templateResume.experience[0].achievement,
-        startDate: templateResume.experience[0].startDate,
-        endDate: templateResume.experience[0].endDate,
-        location: templateResume.experience[0].location,
-        jobDescription: templateResume.experience[0].jobDescription,
-      },
+      personalDetails: templateResume.personalDetails,
+      education: templateResume.education[0],
+      experience: templateResume.experience[0],
     });
     setStoreQualifications({
-      education: [
-        {
-          name: templateResume.education[0].name,
-          achievement: templateResume.education[0].achievement,
-          startDate: templateResume.education[0].startDate,
-          endDate: templateResume.education[0].endDate,
-          location: templateResume.education[0].location,
-        },
-      ],
-      experience: [
-        {
-          name: templateResume.experience[0].name,
-          achievement: templateResume.experience[0].achievement,
-          startDate: templateResume.experience[0].startDate,
-          endDate: templateResume.experience[0].endDate,
-          location: templateResume.experience[0].location,
-          jobDescription: templateResume.experience[0].jobDescription,
-        },
-      ],
+      education: [templateResume.education[0]],
+      experience: [templateResume.experience[0]],
     });
   };
 
   const handleInputs = (e, section) => {
+    // Extracting name and value from the input event
     const { name, value } = e.target;
+    // Updating state using functional update to ensure correct previous state reference
     setValues((prev) => ({
+      // Spread previous state
       ...prev,
+      // Update the specific section of the form with the new input value
       [section]: { ...prev[section], [name]: value },
     }));
   };
@@ -165,21 +93,21 @@ const CvApp = () => {
     setColor(e.target.value);
   };
 
+  // Styles for layout and font
   const layoutStyles = {
     Left: { flexDirection: "row" },
     Right: { flexDirection: "row-reverse" },
     Top: { flexDirection: "column" },
   };
-
   const fontStyles = {
     Serif: { fontFamily: "serif" },
     Sans: { fontFamily: "Open Sans" },
     Segoe: { fontFamily: "Segoe UI" },
   };
-
   const styleLayout = layoutStyles[layout] || {};
   const styleFont = fontStyles[font] || {};
 
+  // PDF generation
   const { toPDF, targetRef } = usePDF({
     filename: `CV ${values.personalDetails.name}`,
   });

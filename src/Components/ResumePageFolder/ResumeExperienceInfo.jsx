@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
 import "./ResumeExperienceInfo.css";
 
+// Component for displaying professional experience information on the resume
 const ResumeExperienceInfo = ({ showStoredExperience, layout }) => {
   let displayExperience;
 
+  // Map stored experience data to JSX elements
   displayExperience = showStoredExperience.map((experience) => {
+    // Generate unique key for each experience entry
     const newId = window.crypto.randomUUID();
     return (
       <div className="experience-info" key={newId}>
@@ -30,11 +33,13 @@ const ResumeExperienceInfo = ({ showStoredExperience, layout }) => {
   return (
     <div className="experience-section">
       <h3>Professional Experience</h3>
+      {/* Display mapped experience entries */}
       {displayExperience}
     </div>
   );
 };
 
+// Prop type validation for ResumeExperienceInfo component
 ResumeExperienceInfo.propTypes = {
   showStoredExperience: PropTypes.arrayOf(
     PropTypes.shape({

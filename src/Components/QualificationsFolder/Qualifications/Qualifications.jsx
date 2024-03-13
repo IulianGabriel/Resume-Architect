@@ -1,16 +1,18 @@
 import AccordionItemComp from "../AccordionItemComp";
 import { Accordion } from "@chakra-ui/accordion";
-import { FaBriefcase } from "react-icons/fa"; // icon for "experience"
+import { FaBriefcase } from "react-icons/fa";
 import { GiOpenBook } from "react-icons/gi";
 import PropTypes from "prop-types";
 import "./Qualifications.css";
 
+// Component for managing education and experience qualifications
 const Qualifications = ({
   qualificationInputs,
   setQualificationHandle,
   storeQualifications,
   setStoreQualifications,
 }) => {
+  // Function to handle changes in qualification inputs
   const handleQualificationsInputs = (e, section) => {
     const { name, value } = e.target;
     setQualificationHandle((prev) => ({
@@ -18,6 +20,7 @@ const Qualifications = ({
       [section]: { ...prev[section], [name]: value },
     }));
   };
+
   return (
     <Accordion
       allowToggle
@@ -27,6 +30,7 @@ const Qualifications = ({
         gap: "1rem",
       }}
     >
+      {/* Component for managing education qualifications */}
       <AccordionItemComp
         config={{
           text: "Education",
@@ -39,6 +43,7 @@ const Qualifications = ({
           setStoreQualifications: setStoreQualifications,
         }}
       />
+      {/* Component for managing experience qualifications */}
       <AccordionItemComp
         config={{
           text: "Experience",
@@ -55,6 +60,7 @@ const Qualifications = ({
   );
 };
 
+// PropTypes for Qualifications component
 Qualifications.propTypes = {
   qualificationInputs: PropTypes.shape({
     education: PropTypes.object.isRequired,

@@ -3,6 +3,7 @@ import { FaRegFileAlt } from "react-icons/fa";
 import { BiCustomize } from "react-icons/bi";
 import "./Sidebar.css";
 
+// Sidebar component for switching between content and customize view modes.
 const Sidebar = ({ viewMode, handleViewMode }) => {
   return (
     <div className="sidebar">
@@ -22,6 +23,7 @@ const Sidebar = ({ viewMode, handleViewMode }) => {
   );
 };
 
+// Prop type validation for Sidebar component
 Sidebar.propTypes = {
   viewMode: PropTypes.oneOf(["Content", "Customize"]).isRequired,
   handleViewMode: PropTypes.func.isRequired,

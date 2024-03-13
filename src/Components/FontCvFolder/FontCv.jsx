@@ -2,10 +2,12 @@ import PropTypes from "prop-types";
 import { calculateColorBrightness } from "../../util/colorUtils";
 import "./FontCv.css";
 
+// Define the FontCv component
 const FontCv = ({ handleFonts, font, color }) => {
+  // Calculate brightness based on color
   const brightness = calculateColorBrightness(color);
+  // Determine text color based on brightness
   const textColor = brightness > 128 ? "#333" : "white";
-
   return (
     <div className="font-cv-container">
       <h2>Fonts</h2>
@@ -54,6 +56,7 @@ const FontCv = ({ handleFonts, font, color }) => {
   );
 };
 
+// Define prop types for the FontCv component
 FontCv.propTypes = {
   handleFonts: PropTypes.func.isRequired,
   font: PropTypes.string.isRequired,

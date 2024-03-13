@@ -5,8 +5,11 @@ import { FaLocationDot } from "react-icons/fa6";
 import { calculateColorBrightness } from "../../util/colorUtils";
 import "./ResumePersonalInfo.css";
 
+// Component for displaying personal information on the resume
 const ResumePersonalInfo = ({ personalInfo, layout, color }) => {
+  // Calculate brightness of background color to determine text color
   const brightness = calculateColorBrightness(color);
+  // Determine text color based on brightness
   const textColor = brightness > 128 ? "#333" : "white";
 
   return (
@@ -37,6 +40,7 @@ const ResumePersonalInfo = ({ personalInfo, layout, color }) => {
   );
 };
 
+// Prop type validation for ResumePersonalInfo component
 ResumePersonalInfo.propTypes = {
   personalInfo: PropTypes.shape({
     name: PropTypes.string.isRequired,

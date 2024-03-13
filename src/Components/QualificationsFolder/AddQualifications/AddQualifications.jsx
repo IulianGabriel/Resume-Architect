@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-import { FaTrash } from "react-icons/fa"; // icon for "clear" button
+import { FaTrash } from "react-icons/fa";
 import "./AddQualifications.css";
 
+// Define the AddQualifications functional component
 const AddQualifications = ({
   config,
   handleSaveBtn,
@@ -103,6 +104,7 @@ const AddQualifications = ({
   );
 };
 
+// Define prop types for the AddQualifications component
 AddQualifications.propTypes = {
   config: PropTypes.shape({
     text: PropTypes.string.isRequired,

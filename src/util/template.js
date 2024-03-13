@@ -1,3 +1,4 @@
+// Define the templateResume object containing sample resume data
 export const templateResume = {
   personalDetails: {
     name: "Samuel Parris",
