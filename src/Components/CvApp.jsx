@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { templateResume } from "../util/template";
 import { BsFileEarmarkPdf } from "react-icons/bs";
 import { FaDownload } from "react-icons/fa";
@@ -13,6 +13,7 @@ import Qualifications from "./QualificationsFolder/Qualifications/Qualifications
 import Layout from "./LayoutFolder/Layout";
 import ColorCv from "./ColorCvFolder/ColorCv";
 import FontCv from "./FontCvFolder/FontCv";
+import { CvContext } from "../store/cv-app-context";
 
 const CvApp = () => {
   // State for controlling different aspects of the CV
@@ -112,69 +113,73 @@ const CvApp = () => {
     filename: `CV ${values.personalDetails.name}`,
   });
 
+  const contextValue = {
+    storeQualifications: storeQualifications,
+    setStoreQualifications: setStoreQualifications,
+    qualificationInputs: values,
+    setQualificationInputs: setValues,
+  };
+
   return (
-    <div className="app-div">
-      <section className="customize-resume-container">
-        <Sidebar viewMode={viewMode} handleViewMode={handleViewMode} />
-        <div className="form-container">
-          <ResumeControls
-            handleClearButton={handleClearButton}
-            handleTemplateButton={handleTemplateButton}
-          />
-          {viewMode === "Content" ? (
-            <>
-              <PersonalDetails
-                handlePersonalDetailsInputs={(e) =>
-                  handleInputs(e, "personalDetails")
-                }
-                pdInputValues={values.personalDetails}
-              />
-              <Qualifications
-                storeQualifications={storeQualifications}
-                setStoreQualifications={setStoreQualifications}
-                qualificationInputs={values}
-                setQualificationHandle={setValues}
-              />
-            </>
-          ) : (
-            <>
-              <Layout handleLayouts={handleLayouts} color={color} />
-              <ColorCv color={color} handleColor={handleColor} />
-              <FontCv handleFonts={handleFonts} font={font} color={color} />
-            </>
-          )}
-          <div className="download-button-container">
-            <button id="download-button" onClick={() => toPDF()}>
-              <span>
-                <BsFileEarmarkPdf /> Download
-              </span>
-              <FaDownload />
-            </button>
+    <CvContext.Provider value={contextValue}>
+      <div className="app-div">
+        <section className="customize-resume-container">
+          <Sidebar viewMode={viewMode} handleViewMode={handleViewMode} />
+          <div className="form-container">
+            <ResumeControls
+              handleClearButton={handleClearButton}
+              handleTemplateButton={handleTemplateButton}
+            />
+            {viewMode === "Content" ? (
+              <>
+                <PersonalDetails
+                  handlePersonalDetailsInputs={(e) =>
+                    handleInputs(e, "personalDetails")
+                  }
+                  pdInputValues={values.personalDetails}
+                />
+                <Qualifications />
+              </>
+            ) : (
+              <>
+                <Layout handleLayouts={handleLayouts} color={color} />
+                <ColorCv color={color} handleColor={handleColor} />
+                <FontCv handleFonts={handleFonts} font={font} color={color} />
+              </>
+            )}
+            <div className="download-button-container">
+              <button id="download-button" onClick={() => toPDF()}>
+                <span>
+                  <BsFileEarmarkPdf /> Download
+                </span>
+                <FaDownload />
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
-      <section
-        ref={targetRef}
-        className="resume-container"
-        style={{ ...styleLayout, ...styleFont }}
-      >
-        <ResumePersonalInfo
-          personalInfo={values.personalDetails}
-          layout={layout}
-          color={color}
-        />
-        <div className="more-information">
-          <ResumeEducationInfo
-            showStoredEducation={storeQualifications.education}
+        </section>
+        <section
+          ref={targetRef}
+          className="resume-container"
+          style={{ ...styleLayout, ...styleFont }}
+        >
+          <ResumePersonalInfo
+            personalInfo={values.personalDetails}
             layout={layout}
+            color={color}
           />
-          <ResumeExperienceInfo
-            showStoredExperience={storeQualifications.experience}
-            layout={layout}
-          />
-        </div>
-      </section>
-    </div>
+          <div className="more-information">
+            <ResumeEducationInfo
+              showStoredEducation={storeQualifications.education}
+              layout={layout}
+            />
+            <ResumeExperienceInfo
+              showStoredExperience={storeQualifications.experience}
+              layout={layout}
+            />
+          </div>
+        </section>
+      </div>
+    </CvContext.Provider>
   );
 };
 

@@ -1,5 +1,7 @@
 import AddQualifications from "./AddQualifications/AddQualifications";
 import { useState } from "react";
+import { useContext } from "react";
+import { CvContext } from "../../store/cv-app-context";
 import {
   AccordionItem,
   AccordionButton,
@@ -11,13 +13,11 @@ import PropTypes from "prop-types";
 // Component representing an accordion item for displaying qualifications (education or experience)
 const AccordionItemComp = ({ config }) => {
   const {
-    storeQualifications,
     setStoreQualifications,
     setQualificationInputs,
-    text,
-    icon,
-    qualificationInputs,
-  } = config;
+    storeQualifications,
+  } = useContext(CvContext);
+  const { text, icon, qualificationInputs } = config;
 
   // State variables
   const [addQualifications, setAddQualifications] = useState(false);
@@ -179,13 +179,11 @@ AccordionItemComp.propTypes = {
   config: PropTypes.shape({
     text: PropTypes.string.isRequired,
     icon: PropTypes.element.isRequired,
-    setStoreQualifications: PropTypes.func.isRequired,
-    setQualificationInputs: PropTypes.func.isRequired,
     qualificationInputs: PropTypes.object.isRequired,
     storeQualifications: PropTypes.shape({
       education: PropTypes.array.isRequired,
       experience: PropTypes.array.isRequired,
-    }).isRequired,
+    }),
   }).isRequired,
 };
 
